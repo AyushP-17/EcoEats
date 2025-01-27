@@ -99,7 +99,7 @@
                     <a href="./cat_person.html">Contacts</a>
                   </span>
                   <span class="thq-link thq-body-small">
-                    <a href="./cat_person.html">CATS!</a>
+                    <a href="./cat_person.html">References</a>
                   </span>
                 </nav>
               </div>
@@ -140,7 +140,7 @@
                       <span>Contact</span>
                     </span>
                     <span class="thq-link thq-body-small">
-                      <a href="cat_person.html">CATS!</a>
+                      <a href="cat_person.html">References</a>
                     </span>
                   </nav>
                 </div>
@@ -343,25 +343,8 @@
           <!--Features1 component-->
           <div class="thq-section-padding">
             <div class="features1-container2 thq-section-max-width">
-              <div class="features1-image-container">
-                <img
-                  alt="Fresh organic vegetables"
-                  src="https://images.unsplash.com/photo-1706288456714-4db678c1c536?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNzQzODI0NHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features1-image1 thq-img-ratio-16-9"
-                />
-                <img
-                  alt="Local farmers market"
-                  src="https://images.unsplash.com/photo-1638132035918-90a22beaab3b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNzQzODI0NXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features1-image2 thq-img-ratio-16-9"
-                />
-                <img
-                  alt="Sustainability practices"
-                  src="https://images.unsplash.com/photo-1653249288113-ed6e0db195a3?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNzQzODI0NHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
-                  class="features1-image3 thq-img-ratio-16-9"
-                />
-              </div>
               <div class="features1-tabs-menu">
-                <div class="features1-tab-horizontal1">
+                <div class="features1-tab-horizontal1" onclick="switchTab(1)">
                   <div class="features1-divider-container1">
                     <div class="features1-container3"></div>
                   </div>
@@ -371,14 +354,13 @@
                     </h2>
                     <span class="thq-body-small">
                       <span>
-                        We prioritize using locally grown, organic vegetables in
-                        all our dishes to provide the best flavors and
-                        nutrients.
+                        We prioritize using locally grown, organic vegetables in all our
+                        dishes to provide the best flavors and nutrients.
                       </span>
                     </span>
                   </div>
                 </div>
-                <div class="features1-tab-horizontal2">
+                <div class="features1-tab-horizontal2" onclick="switchTab(2)">
                   <div class="features1-divider-container2">
                     <div class="features1-container4"></div>
                   </div>
@@ -388,13 +370,13 @@
                     </h2>
                     <span class="thq-body-small">
                       <span>
-                        We source our ingredients locally, supporting nearby
-                        farmers and ensuring the freshest produce in our dishes.
+                        We source our ingredients locally, supporting nearby farmers and
+                        ensuring the freshest produce in our dishes.
                       </span>
                     </span>
                   </div>
                 </div>
-                <div class="features1-tab-horizontal3">
+                <div class="features1-tab-horizontal3" onclick="switchTab(3)">
                   <div class="features1-divider-container3">
                     <div class="features1-container5"></div>
                   </div>
@@ -402,13 +384,32 @@
                     <h2 class="thq-heading-2"><span>Sustainability</span></h2>
                     <span class="thq-body-small">
                       <span>
-                        Our dishes are prepared using sustainable and
-                        eco-friendly practices, ensuring a minimal carbon
-                        footprint.
+                        Our dishes are prepared using sustainable and eco-friendly
+                        practices, ensuring a minimal carbon footprint.
                       </span>
                     </span>
                   </div>
                 </div>
+              </div>
+              <div class="features1-image-container">
+                <img
+                  id="image1"
+                  alt="Fresh organic vegetables"
+                  src="https://images.unsplash.com/photo-1706288456714-4db678c1c536?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNzQzODI0NHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="features1-image thq-img-ratio-16-9 active"
+                />
+                <img
+                  id="image2"
+                  alt="Local farmers market"
+                  src="https://images.unsplash.com/photo-1638132035918-90a22beaab3b?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNzQzODI0NXw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="features1-image thq-img-ratio-16-9"
+                />
+                <img
+                  id="image3"
+                  alt="Sustainability practices"
+                  src="https://images.unsplash.com/photo-1653249288113-ed6e0db195a3?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTczNzQzODI0NHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                  class="features1-image thq-img-ratio-16-9"
+                />
               </div>
             </div>
           </div>
@@ -610,13 +611,6 @@
                 <h2 class="thq-heading-2">
                   <span>Customer Testimonials</span>
                 </h2>
-                <span class="testimonial-text11 thq-body-small">
-                  <span>
-                    EcoEats is my go-to spot for delicious and healthy meals.
-                    The flavors are amazing, and I love knowing that the
-                    ingredients are sourced locally.
-                  </span>
-                </span>
               </div>
               <div class="thq-grid-2">
                 <div class="thq-animated-card-bg-2">
