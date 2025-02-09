@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EcoEats</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f8f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6b8e23;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        h1, h2 {
+            color: #4b6a40;
+        }
+        h2 {
+            border-bottom: 2px solid #d4e157;
+            padding-bottom: 5px;
+        }
+        form {
+            padding: 20px 0;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #4b6a40;
+        }
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #d4e157;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #f9f9f6;
+        }
+        form textarea {
+            resize: vertical;
+        }
+        form button {
+            background-color: #6b8e23;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #4b6a40;
+        }
+        .contact-info {
+            margin-top: 40px;
+        }
+        .contact-info p {
+            margin: 8px 0;
+            color: #4b6a40;
+            font-size: 1rem;
+        }
+        .contact-info p strong {
+            color: #6b8e23;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #6b8e23;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Contact EcoEats
+    </header>
+
+    <div class="container">
+        <!-- Contact Form -->
+        <section>
+            <h2>Get in Touch</h2>
+            <form action="#" method="post">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info">
+            <h2>Contact Details</h2>
+            <p><strong>Email:</strong> contact@ecoeats.com</p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Address:</strong> 123 Greenway Blvd, Sustainability City, SC 54321</p>
+            <p><strong>Hours:</strong> Monday - Friday: 9 AM - 6 PM</p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 EcoEats. All Rights Reserved.
+    </footer>
+</body>
+</html>
