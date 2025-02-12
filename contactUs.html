@@ -3,126 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - EcoEats</title>
+    <title>Visit Us - EcoEats</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./index.css" />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f8f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; text-align: center; background-color: var(--dl-color-theme-neutral-light);}
+        .container { max-width: 800px; margin: 0 auto; }
+        .map-container { margin: 20px 0; }
+        iframe { width: 100%; height: 300px; border: 0; }
+        .info-container { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
+        .info { width: 48%; }
+        .vertical-divider {
+            height: 100%; /* Adjust the width as needed */
+                        width: 1px;
+            background-color: var(--dl-color-theme-neutral-dark);
+        
+        }
+        .button { background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; }
+        .footer-wrapper {
+            display: contents;
         }
         header {
-            background-color: #6b8e23;
-            color: white;
+            font-family: inherit;
+            background-color: var(--dl-color-theme-neutral-light);
+            color: black;
             padding: 20px;
             text-align: center;
             font-size: 1.8rem;
             font-weight: bold;
         }
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 25px;
-            background-color: #ffffff;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-        }
-        h1, h2 {
-            color: #4b6a40;
-        }
-        h2 {
-            border-bottom: 2px solid #d4e157;
-            padding-bottom: 5px;
-        }
-        form {
-            padding: 20px 0;
-        }
-        form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #4b6a40;
-        }
-        form input, form textarea, form button {
+        .footer-footer1 {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #d4e157;
-            border-radius: 8px;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            flex-shrink: 0;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .footer-max-width {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .footer-content {
+            gap: var(--dl-space-space-fourunits);
+            width: 100%;
+            display: flex;
+            align-self: stretch;
+            align-items: flex-start;
+            flex-shrink: 0;
+            border-radius: var(--dl-radius-radius-radius4);
+        }
+        .footer-text-input {
+            gap: 8px;
+            width: 100%;
+            height: 32px;
+            display: flex;
             font-size: 16px;
-            background-color: #f9f9f6;
+            box-sizing: content-box;
+            text-align: left;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            background-color: transparent;
         }
-        form textarea {
-            resize: vertical;
+
+        .thq-divider-horizontal {
+            width: 85%; /* Adjust the width as needed */
+                        height: 1px;
+            background-color: var(--dl-color-theme-neutral-dark);
         }
-        form button {
-            background-color: #6b8e23;
-            color: white;
-            font-weight: bold;
-            border: none;
+
+        .thq-body-small {
+            font-size: 16px;
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.5;
+        }
+
+        .thq-button-filled.hero-button1 {
+            gap: var(--dl-space-space-halfunit);
+            fill: var(--dl-color-theme-secondary1);
+            color: var(--dl-color-theme-secondary1);
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        form button:hover {
-            background-color: #4b6a40;
-        }
-        .contact-info {
-            margin-top: 40px;
-        }
-        .contact-info p {
-            margin: 8px 0;
-            color: #4b6a40;
-            font-size: 1rem;
-        }
-        .contact-info p strong {
-            color: #6b8e23;
-        }
-        footer {
+            display: flex;
+            transition: 0.3s;
+            align-items: center;
+            font-weight: bold;
+            padding-top: var(--dl-space-space-halfunit);
+            white-space: nowrap;
+            border-color: var(--dl-color-theme-primary1);
+            border-width: 1px;
+            display: inline-block;
+            margin: 20px auto;
             text-align: center;
-            padding: 15px;
-            background-color: #6b8e23;
+        }
+
+        .thq-button-filled.hero-button1 a {
             color: white;
-            margin-top: 40px;
-            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .thq-button-filled {
+            gap: var(--dl-space-space-halfunit);
+            fill: var(--dl-color-theme-secondary1);
+            color: var(--dl-color-theme-secondary1);
+            cursor: pointer;
+            display: flex;
+            transition: 0.3s;
+            align-items: center;
+            font-weight: bold;
+            padding-top: var(--dl-space-space-halfunit);
+            white-space: nowrap;
+            border-color: var(--dl-color-theme-primary1);
+            border-width: 1px;
+            padding-left: var(--dl-space-space-oneandhalfunits);
+            border-radius: var(--dl-radius-radius-buttonradius);
+            padding-right: var(--dl-space-space-oneandhalfunits);
+            padding-bottom: var(--dl-space-space-halfunit);
+            justify-content: center;
+            background-color: var(--dl-color-theme-primary1);
+        }
+        
+        .thq-button-filled:hover {
+            fill: var(--dl-color-theme-secondary2);
+            color: var(--dl-color-theme-secondary2);
+            border-color: var(--dl-color-theme-primary2);
+            background-color: var(--dl-color-theme-primary2);
         }
     </style>
-</head>
+</head
+        .thq-button-filled {
+            gap: var(--dl-space-space-halfunit);
+            fill: var(--dl-color-theme-secondary1);
+            color: var(--dl-color-theme-secondary1);
+            cursor: pointer;
+            display: flex;
+            transition: 0.3s;
+            align-items: center;
+            font-weight: bold;
+            padding-top: var(--dl-space-space-halfunit);
+            white-space: nowrap;
+            border-color: var(--dl-color-theme-primary1);
+            border-width: 1px;
+            padding-left: var(--dl-space-space-oneandhalfunits);
+            border-radius: var(--dl-radius-radius-buttonradius);
+            padding-right: var(--dl-space-space-oneandhalfunits);
+            padding-bottom: var(--dl-space-space-halfunit);
+            justify-content: center;
+            background-color: var(--dl-color-theme-primary1);
+        }
+        
+        .thq-button-filled:hover {
+            fill: var(--dl-color-theme-secondary2);
+            color: var(--dl-color-theme-secondary2);
+            border-color: var(--dl-color-theme-primary2);
+            background-color: var(--dl-color-theme-primary2);
+        }
+>
 <body>
-    <header>
-        Contact EcoEats
-    </header>
-
+    <navb
+        .thq-button-filled {
+            gap: var(--dl-space-space-halfunit);
+            fill: var(--dl-color-theme-secondary1);
+            color: var(--dl-color-theme-secondary1);
+            cursor: pointer;
+            display: flex;
+            transition: 0.3s;
+            align-items: center;
+            font-weight: bold;
+            padding-top: var(--dl-space-space-halfunit);
+            white-space: nowrap;
+            border-color: var(--dl-color-theme-primary1);
+            border-width: 1px;
+            padding-left: var(--dl-space-space-oneandhalfunits);
+            border-radius: var(--dl-radius-radius-buttonradius);
+            padding-right: var(--dl-space-space-oneandhalfunits);
+            padding-bottom: var(--dl-space-space-halfunit);
+            justify-content: center;
+            background-color: var(--dl-color-theme-primary1);
+        }
+        
+        .thq-button-filled:hover {
+            fill: var(--dl-color-theme-secondary2);
+            color: var(--dl-color-theme-secondary2);
+            border-color: var(--dl-color-theme-primary2);
+            background-color: var(--dl-color-theme-primary2);
+        }
+ar-wrapper class="navbar-wrapper">
+        <!--Navbar component-->
+        <header class="navbar-container">
+          <header data-thq="thq-navbar" class="navbar-navbar-interactive">
+            <img
+              alt="EcoEats Logo"
+              src="./ecoeatslogo.png"
+              class="navbar-image1"
+            />
+            <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
+              <nav class="navbar-links1">
+                <span class="thq-link thq-body-small">
+                  <a href="./index.html">Home</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./menu.html">Menu</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./aboutUs.html">About Us</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./contactUs.html">Contact Us</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./reservations.html">Reservations</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./contactUs.html">References</a>
+                </span>
+              </nav>
+            </div>
+            <div data-thq="thq-burger-menu" class="navbar-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="navbar-icon1">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </div>
+            <div data-thq="thq-mobile-menu" class="navbar-mobile-menu">
+              <div class="navbar-nav">
+                <div class="navbar-top">
+                  <img
+                    alt="EcoEats Logo"
+                    src="./ecoeatslogo.png"
+                    class="navbar-logo"
+                  />
+                  <div data-thq="thq-close-menu" class="navbar-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <nav class="navbar-links2">
+                  <span class="thq-link thq-body-small">
+                    <a href="./index.html">Home</a>
+                  </span>
+                  <span class="thq-link thq-body-small">
+                    <a href="./menu.html">Menu</a>
+                  </span>
+                  <span class="thq-link thq-body-small">
+                    <a href="./aboutUs.html">About Us</a>
+                  </span>
+                  <span class="thq-link thq-body-small">
+                    <a href="./contactUs.html">Contact Us</a>
+                  </span>
+                  
+                <span class="thq-link thq-body-small">
+                  <a href="./reservations.html">Reservations</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./contactUs.html">References</a>
+                </nav>
+              </div>
+            </div>
+          </header>
+        </header>
+      </navbar-wrapper>
     <div class="container">
-        <!-- Contact Form -->
-        <section>
-            <h2>Get in Touch</h2>
-            <form action="#" method="post">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-        <!-- Contact Information -->
-        <section class="contact-info">
-            <h2>Contact Details</h2>
-            <p><strong>Email:</strong> contact@ecoeats.com</p>
-            <p><strong>Phone:</strong> (555) 123-4567</p>
-            <p><strong>Address:</strong> 123 Greenway Blvd, Sustainability City, SC 54321</p>
-            <p><strong>Hours:</strong> Monday - Friday: 9 AM - 6 PM</p>
-        </section>
+        <h1>Visit Us</h1>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.123456789!2d-97.8271234!3d30.5123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b123456789ab%3A0x123456789abcdef!2s200%20S%20Vista%20Ridge%20Blvd%2C%20Cedar%20Park%2C%20TX!5e0!3m2!1sen!2sus!4v1698765432100" allowfullscreen></iframe>
+        </div>
+        
+        <div class="info-container">
+            <div class="info">
+                <h2>Contact Information</h2>
+                <p>Phone: +1-123-456-7890</p>
+                <p>Email: info@ecoeats.com</p>
+                <p>Address: 200 S Vista Ridge Blvd, Cedar Park, TX</p>
+            </div>
+            <div class="vertical-divider"></div>
+            <div class="info">
+                <h2>Business Hours</h2>
+                <p>Monday - Friday: 10:00 AM - 9:00 PM</p>
+                <p>Saturday: 11:00 AM - 10:00 PM</p>
+                <p>Sunday: 11:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        
+        <button class="thq-button-filled hero-button1">
+            <span class="thq-body-small"><a href="./reservations.html">Make a Reservation</a></span>
+        </button>
     </div>
 
-    <footer>
-        &copy; 2025 EcoEats. All Rights Reserved.
-    </footer>
+    <footer-wrapper class="footer-wrapper">
+        <!--Footer component-->
+        <footer class="footer-footer1 thq-section-padding">
+            <div class="footer-max-width">
+                
+                <div class="footer-credits">
+                    <div class="thq-divider-horizontal"></div>
+                    <span class="thq-body-small">
+                        <span>© 2025 EcoEats. All rights reserved.</span>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </footer-wrapper>
 </body>
 </html>

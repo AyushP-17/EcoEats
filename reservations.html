@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservations - EcoEats</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./index.css" />
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f8f4;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dl-color-theme-neutral-light);
             color: #333;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #6b8e23;
-            color: white;
+            font-family: inherit;
+            background-color: var(--dl-color-theme-neutral-light);
+            color: black;
             padding: 20px;
             text-align: center;
             font-size: 1.8rem;
@@ -27,6 +31,9 @@
             background-color: #ffffff;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
+        }
+        .navbar-container, .navbar-links1, .navbar-links2, .thq-link {
+            font-family: 'Roboto', sans-serif;
         }
         h1, h2 {
             color: #4b6a40;
@@ -64,22 +71,149 @@
         form button:hover {
             background-color: #4b6a40;
         }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background-color: #6b8e23;
-            color: white;
-            margin-top: 40px;
-            font-size: 0.9rem;
+        .footer-wrapper {
+            display: contents;
+        }
+        .footer-footer1 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            flex-shrink: 0;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .footer-max-width {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .footer-content {
+            gap: var(--dl-space-space-fourunits);
+            width: 100%;
+            display: flex;
+            align-self: stretch;
+            align-items: flex-start;
+            flex-shrink: 0;
+            border-radius: var(--dl-radius-radius-radius4);
+        }
+        .footer-text-input {
+            gap: 8px;
+            width: 100%;
+            height: 32px;
+            display: flex;
+            font-size: 16px;
+            box-sizing: content-box;
+            text-align: left;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            background-color: transparent;
+        }
+
+        .thq-divider-horizontal {
+            width: 85%;
+            height: 1px;
+            background-color: var(--dl-color-theme-neutral-dark);
+        }
+
+        .thq-body-small {
+            font-size: 16px;
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
+    <navbar-wrapper class="navbar-wrapper">
+        <!--Navbar component-->
+        <header class="navbar-container">
+          <header data-thq="thq-navbar" class="navbar-navbar-interactive">
+            <img
+              alt="EcoEats Logo"
+              src="./ecoeatslogo.png"
+              class="navbar-image1"
+            />
+            <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
+              <nav class="navbar-links1">
+                <span class="thq-link thq-body-small">
+                  <a href="./index.html">Home</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./menu.html">Menu</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./aboutUs.html">About Us</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./contactUs.html">Contact Us</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./reservations.html">Reservations</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./contactUs.html">References</a>
+                </span>
+              </nav>
+            </div>
+            <div data-thq="thq-burger-menu" class="navbar-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="navbar-icon1">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </div>
+            <div data-thq="thq-mobile-menu" class="navbar-mobile-menu">
+              <div class="navbar-nav">
+                <div class="navbar-top">
+                  <img
+                    alt="EcoEats Logo"
+                    src="./ecoeatslogo.png"
+                    class="navbar-logo"
+                  />
+                  <div data-thq="thq-close-menu" class="navbar-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <nav class="navbar-links2">
+                  <span class="thq-link thq-body-small">
+                    <a href="./index.html">Home</a>
+                  </span>
+                  <span class="thq-link thq-body-small">
+                    <a href="./menu.html">Menu</a>
+                  </span>
+                  <span class="thq-link thq-body-small">
+                    <a href="./aboutUs.html">About Us</a>
+                  </span>
+                  <span class="thq-link thq-body-small">
+                    <a href="./contactUs.html">Contact Us</a>
+                  </span>
+                  
+                <span class="thq-link thq-body-small">
+                  <a href="./reservations.html">Reservations</a>
+                </span>
+                <span class="thq-link thq-body-small">
+                  <a href="./contactUs.html">References</a>
+                </nav>
+              </div>
+            </div>
+          </header>
+        </header>
+      </navbar-wrapper>
     <header>
         Make a Reservation
     </header>
 
     <div class="container">
+        
         <section>
             <h2>Reserve Your Table</h2>
             <form action="#" method="post">
@@ -113,13 +247,21 @@
 
                 <label for="message">Other Important Information</label>
                 <textarea id="message" name="message" rows="4" placeholder="Enter any other important information"></textarea>
-                <button type="submit">Book Now</button>
+                <button type="submit"; class="thq-button-animated thq-button-filled steps-button">Book Now</button>
             </form>
         </section>
     </div>
 
-    <footer>
-        &copy; 2025 EcoEats. All Rights Reserved.
-    </footer>
+    <footer-wrapper class="footer-wrapper">
+        <!--Footer component-->
+        <footer class="footer-footer1 thq-section-padding">
+          <div class="footer-credits">
+            <div class="thq-divider-horizontal"></div>
+              <span class="thq-body-small">
+                <span>© 2025 EcoEats. All rights reserved.</span>
+              </span>
+          </div>
+        </footer>
+      </footer-wrapper>
 </body>
 </html>
