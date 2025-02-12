@@ -6,20 +6,15 @@
     <title>Visit Us - EcoEats</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap">
     <link rel="stylesheet" href="./index.css" />
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 20px; text-align: center; background-color: var(--dl-color-theme-neutral-light);}
         .container { max-width: 800px; margin: 0 auto; }
         .map-container { margin: 20px 0; }
         iframe { width: 100%; height: 300px; border: 0; }
-        .info-container { display: flex; justify-content: space-between; align-items: center; margin: 20px 0; }
-        .info { width: 48%; }
-        .vertical-divider {
-            height: 100%; /* Adjust the width as needed */
-                        width: 1px;
-            background-color: var(--dl-color-theme-neutral-dark);
-        
-        }
+        .info-container { display: flex; justify-content: center; align-items: flex-start; width: fit-content; margin: 0 auto; }
+        .info { width: 55%; margin: 0 10px; }
         .button { background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; }
         .footer-wrapper {
             display: contents;
@@ -76,8 +71,15 @@
 
         .thq-divider-horizontal {
             width: 85%; /* Adjust the width as needed */
-                        height: 1px;
+            height: 1px;
             background-color: var(--dl-color-theme-neutral-dark);
+        }
+
+        .thq-divider-vertical {
+            width: 1px; /* Set the width of the divider */
+            height: 100%; /* Set the height of the divider */
+            background-color: var(--dl-color-theme-neutral-dark); /* Set the background color */
+            margin: 0 auto; /* Center the divider */
         }
 
         .thq-body-small {
@@ -112,7 +114,7 @@
         .thq-button-filled {
             gap: var(--dl-space-space-halfunit);
             fill: var(--dl-color-theme-secondary1);
-            color: var(--dl-color-theme-secondary1);
+            color: var (--dl-color-theme-secondary1);
             cursor: pointer;
             display: flex;
             transition: 0.3s;
@@ -136,66 +138,22 @@
             border-color: var(--dl-color-theme-primary2);
             background-color: var(--dl-color-theme-primary2);
         }
+
+        h1 {
+            font-size: 48px;
+            font-family: 'STIX Two Text', serif;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #0a0a0a;
+        }
+        h2 {
+            color: #4b6a40;
+        }
+        
     </style>
-</head
-        .thq-button-filled {
-            gap: var(--dl-space-space-halfunit);
-            fill: var(--dl-color-theme-secondary1);
-            color: var(--dl-color-theme-secondary1);
-            cursor: pointer;
-            display: flex;
-            transition: 0.3s;
-            align-items: center;
-            font-weight: bold;
-            padding-top: var(--dl-space-space-halfunit);
-            white-space: nowrap;
-            border-color: var(--dl-color-theme-primary1);
-            border-width: 1px;
-            padding-left: var(--dl-space-space-oneandhalfunits);
-            border-radius: var(--dl-radius-radius-buttonradius);
-            padding-right: var(--dl-space-space-oneandhalfunits);
-            padding-bottom: var(--dl-space-space-halfunit);
-            justify-content: center;
-            background-color: var(--dl-color-theme-primary1);
-        }
-        
-        .thq-button-filled:hover {
-            fill: var(--dl-color-theme-secondary2);
-            color: var(--dl-color-theme-secondary2);
-            border-color: var(--dl-color-theme-primary2);
-            background-color: var(--dl-color-theme-primary2);
-        }
->
+</head>
 <body>
-    <navb
-        .thq-button-filled {
-            gap: var(--dl-space-space-halfunit);
-            fill: var(--dl-color-theme-secondary1);
-            color: var(--dl-color-theme-secondary1);
-            cursor: pointer;
-            display: flex;
-            transition: 0.3s;
-            align-items: center;
-            font-weight: bold;
-            padding-top: var(--dl-space-space-halfunit);
-            white-space: nowrap;
-            border-color: var(--dl-color-theme-primary1);
-            border-width: 1px;
-            padding-left: var(--dl-space-space-oneandhalfunits);
-            border-radius: var(--dl-radius-radius-buttonradius);
-            padding-right: var(--dl-space-space-oneandhalfunits);
-            padding-bottom: var(--dl-space-space-halfunit);
-            justify-content: center;
-            background-color: var(--dl-color-theme-primary1);
-        }
-        
-        .thq-button-filled:hover {
-            fill: var(--dl-color-theme-secondary2);
-            color: var(--dl-color-theme-secondary2);
-            border-color: var(--dl-color-theme-primary2);
-            background-color: var(--dl-color-theme-primary2);
-        }
-ar-wrapper class="navbar-wrapper">
+    <navbar-wrapper class="navbar-wrapper">
         <!--Navbar component-->
         <header class="navbar-container">
           <header data-thq="thq-navbar" class="navbar-navbar-interactive">
@@ -213,10 +171,10 @@ ar-wrapper class="navbar-wrapper">
                   <a href="./menu.html">Menu</a>
                 </span>
                 <span class="thq-link thq-body-small">
-                  <a href="./aboutUs.html">About Us</a>
+                  <a href="./aboutUs.html">Sustainability</a>
                 </span>
                 <span class="thq-link thq-body-small">
-                  <a href="./contactUs.html">Contact Us</a>
+                  <a href="./contactUs.html">Visit Us</a>
                 </span>
                 <span class="thq-link thq-body-small">
                   <a href="./reservations.html">Reservations</a>
@@ -257,10 +215,10 @@ ar-wrapper class="navbar-wrapper">
                     <a href="./menu.html">Menu</a>
                   </span>
                   <span class="thq-link thq-body-small">
-                    <a href="./aboutUs.html">About Us</a>
+                    <a href="./aboutUs.html">Sustainability</a>
                   </span>
                   <span class="thq-link thq-body-small">
-                    <a href="./contactUs.html">Contact Us</a>
+                    <a href="./contactUs.html">Visit Us</a>
                   </span>
                   
                 <span class="thq-link thq-body-small">
@@ -277,23 +235,22 @@ ar-wrapper class="navbar-wrapper">
     <div class="container">
         <h1>Visit Us</h1>
         
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.123456789!2d-97.8271234!3d30.5123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b123456789ab%3A0x123456789abcdef!2s200%20S%20Vista%20Ridge%20Blvd%2C%20Cedar%20Park%2C%20TX!5e0!3m2!1sen!2sus!4v1698765432100" allowfullscreen></iframe>
+        <div class="map-container" style="border-radius: 15px; overflow: hidden; border: 5px solid #4CAF50;"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.123456789!2d-97.8271234!3d30.5123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b123456789ab%3A0x123456789abcdef!2s200%20S%20Vista%20Ridge%20Blvd%2C%20Cedar%20Park%2C%20TX!5e0!3m2!1sen!2sus!4v1698765432100&z=14" allowfullscreen></iframe>
         </div>
         
         <div class="info-container">
             <div class="info">
                 <h2>Contact Information</h2>
-                <p>Phone: +1-123-456-7890</p>
-                <p>Email: info@ecoeats.com</p>
-                <p>Address: 200 S Vista Ridge Blvd, Cedar Park, TX</p>
+                <p class="thq-body-small">Phone: +1-123-456-7890</p>
+                <p class="thq-body-small">Email: info@ecoeats.com</p>
+                <p class="thq-body-small">Address: 200 S Vista Ridge Blvd, Cedar Park, TX</p>
             </div>
-            <div class="vertical-divider"></div>
             <div class="info">
                 <h2>Business Hours</h2>
-                <p>Monday - Friday: 10:00 AM - 9:00 PM</p>
-                <p>Saturday: 11:00 AM - 10:00 PM</p>
-                <p>Sunday: 11:00 AM - 6:00 PM</p>
+                <p class="thq-body-small">Monday - Friday: 10:00 AM - 9:00 PM</p>
+                <p class="thq-body-small">Saturday: 11:00 AM - 10:00 PM</p>
+                <p class="thq-body-small">Sunday: 11:00 AM - 6:00 PM</p>
             </div>
         </div>
         
