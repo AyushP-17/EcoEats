@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - EcoEats</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+       body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dl-color-theme-neutral-light);
+            color: #333;
+            margin: 20px 20px auto;
+            padding: 60px 20px 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        header {
+            font-family: inherit;
+            background-color: var(--dl-color-theme-neutral-light);
+            color: black;
+            padding: 0px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        .navbar-container, .navbar-links1, .navbar-links2, .special-link {
+            font-family: 'Roboto', sans-serif;
+            
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-family: 'STIX Two Text', serif;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #0a0a0a;
+        }
+        h2 {
+            font-family: 'Lilita One', sans-serif;
+            border-bottom: 2px solid #d4e157;
+            padding-bottom: 5px;
+            color: #4b6a40;
+        }
+
+        p {
+            font-size: 18px;
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+        form {
+            padding: 20px 0;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #4b6a40;
+        }
+        form input, form select, form button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #d4e157;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #f9f9f6;
+        }
+        form button {
+            background-color: #6b8e23;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #4b6a40;
+        }
+        .footer-wrapper {
+            display: contents;
+        }
+        .footer-footer1 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            flex-shrink: 0;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .footer-max-width {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .footer-content {
+            gap: var(--dl-space-space-fourunits);
+            width: 100%;
+            display: flex;
+            align-self: stretch;
+            align-items: flex-start;
+            flex-shrink: 0;
+            border-radius: var(--dl-radius-radius-radius4);
+        }
+        .footer-text-input {
+            gap: 8px;
+            width: 100%;
+            height: 32px;
+            display: flex;
+            font-size: 16px;
+            box-sizing: content-box;
+            text-align: left;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            background-color: transparent;
+        }
+
+        .special-divider-horizontal {
+            width: 100%;
+            height: 1px;
+            background-color: var(--dl-color-theme-neutral-dark);
+        }
+
+        .special-body-small {
+            font-size: 16px;
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.5;
+        }
+        .gluten-free-icon, .contains-nuts-icon, .organic-icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .icon-key {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .icon-key div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .navbar-container {
+            background-color: var(--dl-color-theme-neutral-light);
+        }
+
+        .navbar-mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dl-color-theme-neutral-light);
+            z-index: 1000;
+        }
+
+        .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
+            display: flex;
+        }
+
+        .navbar-close-menu {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <navbar-wrapper class="navbar-wrapper">
+        <!--Navbar component-->
+        <header class="navbar-container">
+          <header data-thq="special-navbar" class="navbar-navbar-interactive">
+            <img
+              alt="EcoEats Logo"
+              src="./ecoeatslogo.png"
+              class="navbar-image1"
+            />
+            <div data-thq="special-navbar-nav" class="navbar-desktop-menu">
+              <nav class="navbar-links1">
+                <span class="special-link special-body-small">
+                  <a href="./index.html">Home</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./menu.html">Menu</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./aboutUs.html">Sustainability</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./contactUs.html">Visit Us</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./reservations.html">Reservations</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./references.html">References</a>
+                </span>
+              </nav>
+            </div>
+            <style>
+              .navbar-container {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+              }
+              .home-container {
+                padding-top: 60px; /* Adjust this value based on the height of your navbar */
+              }
+              </style>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="navbar-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="navbar-icon1">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </label>
+            <div data-thq="special-mobile-menu" class="navbar-mobile-menu">
+              <div class="navbar-nav">
+                <div class="navbar-top">
+                  <img
+                    alt="EcoEats Logo"
+                    src="./ecoeatslogo.png"
+                    class="navbar-logo"
+                  />
+                  <label for="menu-toggle" class="navbar-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </label>
+                </div>
+                <nav class="navbar-links2">
+                  <span class="special-link special-body-small">
+                    <a href="./index.html">Home</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./menu.html">Menu</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./aboutUs.html">Sustainability</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./contactUs.html">Visit Us</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./reservations.html">Reservations</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./references.html">References</a>
+                  </span>
+                </nav>
+              </div>
+            </div>
+          </header>
+        </header>
+      </navbar-wrapper>
+    <header>
+        <h1>EcoEats Menu</h1>
+        <p>Discover sustainable and delicious dishes made with love and care.</p>
+    </header>
+
+    <div class="container">
+              <!-- Icon Key -->
+              <div class="icon-key">
+                <div>
+                    <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon">
+                    <span>Contains Gluten</span>
+                </div>
+                <div>
+                    <img src="./contains-nuts-icon.png" alt="Contains Nuts" class="contains-nuts-icon">
+                    <span>Contains Nuts</span>
+                </div>
+                <div>
+                    <img src="./organic-icon.png" alt="Organic" class="organic-icon">
+                    <span>100% Organic</span>
+                </div>
+            </div>
+        <!-- Appetizers -->
+        <section class="menu-section">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <h3>Avocado Toast Trio <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon"></h3>
+                <p>Organic sourdough topped with seasonal spreads.</p>
+                <p class="price">$8.50</p>
+            </div>
+            <div class="menu-item">
+                <h3>Farm-Fresh Veggie Platter <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon"> <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
+                <p>Local vegetables with house-made hummus.</p>
+                <p class="price">$9.00</p>
+            </div>
+        </section>
+
+        <!-- Main Courses -->
+        <section class="menu-section">
+            <h2>Main Courses</h2>
+            <div class="menu-item">
+                <h3>Beyond Earth Burger <img src="./contains-nuts-icon.png" alt="Contains Nuts" class="contains-nuts-icon"></h3>
+                <p>Plant-based patty with lettuce, tomato, and house-made sauce.</p>
+                <p class="price">$12.00</p>
+            </div>
+            <div class="menu-item">
+                <h3>Eco Curry Bowl <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon"></h3>
+                <p>Coconut curry with seasonal vegetables and brown rice.</p>
+                <p class="price">$11.50</p>
+            </div>
+        </section>
+
+        <!-- Global Flavors -->
+        <section class="menu-section">
+            <h2>Global Flavors</h2>
+            <div class="menu-item">
+                <h3>Indian Chickpea Masala <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon"></h3>
+                <p>Slow-cooked chickpeas in a rich spiced tomato sauce.</p>
+                <p class="price">$10.00</p>
+            </div>
+            <div class="menu-item">
+                <h3>Japanese Miso Power Bowl <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
+                <p>Brown rice, miso-marinated tofu, and edamame.</p>
+                <p class="price">$12.50</p>
+            </div>
+        </section>
+
+        <!-- Desserts -->
+        <section class="menu-section">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <h3>Vegan Chocolate Mousse <img src="./gluten-free-icon.png" alt="Gluten Free" class="gluten-free-icon"> <img src="./contains-nuts-icon.png" alt="Contains Nuts" class="contains-nuts-icon"></h3>
+                <p>Made with avocado and organic cacao.</p>
+                <p class="price">$6.50</p>
+            </div>
+            <div class="menu-item">
+                <h3>Berry Bliss Parfait <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
+                <p>Layered with coconut yogurt and granola.</p>
+                <p class="price">$7.00</p>
+            </div>
+        </section>
+
+        <!-- Drinks -->
+        <section class="menu-section">
+            <h2>Drinks</h2>
+            <div class="menu-item">
+                <h3>Organic Cold Brew <img src="./gluten-free-icon.png" alt="Gluten Free" class="gluten-free-icon"> <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
+                <p>Sustainably sourced coffee served black or with oat milk.</p>
+                <p class="price">$4.50</p>
+            </div>
+            <div class="menu-item">
+                <h3>Eco Smoothie <img src="./gluten-free-icon.png" alt="Gluten Free" class="gluten-free-icon"> <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
+                <p>Spinach, banana, chia seeds, and almond milk.</p>
+                <p class="price">$6.00</p>
+            </div>
+        </section>
+    </div>
+    <footer class="footer-footer1 special-section-padding">
+        <div class="footer-credits">
+          <div class="special-divider-horizontal"></div>
+            <span class="special-body-small">
+              <span>© 2025 EcoEats. All rights reserved.</span>
+            </span>
+        </div>
+      </footer>
+</body>
+</html>
