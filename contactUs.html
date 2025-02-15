@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Us - EcoEats</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 15px 0px 10px; padding: 60px 0px 0px; text-align: center; background-color: var(--dl-color-theme-neutral-light);overflow-x: hidden;}
+        .container { max-width: 800px; margin: 0 auto; }
+        .map-container { margin: 20px 0; }
+        iframe { width: 100%; height: 300px; border: 0; }
+        .info-container { display: flex; justify-content: center; align-items: flex-start; width: fit-content; margin: 0 auto; }
+        .info { width: 55%; margin: 0 10px; }
+        .button { background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; }
+        .footer-wrapper {
+            display: contents;
+        }
+        header {
+            font-family: inherit;
+            background-color: var(--dl-color-theme-neutral-light);
+            color: black;
+            padding: 0px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .footer-footer1 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            flex-shrink: 0;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .footer-max-width {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .footer-content {
+            gap: var(--dl-space-space-fourunits);
+            width: 100%;
+            display: flex;
+            align-self: stretch;
+            align-items: flex-start;
+            flex-shrink: 0;
+            border-radius: var(--dl-radius-radius-radius4);
+        }
+        .footer-text-input {
+            gap: 8px;
+            width: 100%;
+            height: 32px;
+            display: flex;
+            font-size: 16px;
+            box-sizing: content-box;
+            text-align: left;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            background-color: transparent;
+        }
+
+        .special-divider-horizontal {
+            width: 85%; 
+            height: 1px;
+            background-color: var(--dl-color-theme-neutral-dark);
+        }
+
+        .special-divider-vertical {
+            width: 1px; 
+            height: 100%; 
+            background-color: var(--dl-color-theme-neutral-dark); 
+            margin: 0 auto; 
+        }
+
+        .special-body-small {
+            font-size: 16px;
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.5;
+        }
+
+        .special-button-filled.button1 {
+            gap: var(--dl-space-space-halfunit);
+            fill: var(--dl-color-theme-secondary1);
+            color: var(--dl-color-theme-secondary1);
+            cursor: pointer;
+            display: flex;
+            transition: 0.3s;
+            align-items: center;
+            font-weight: bold;
+            padding-top: var(--dl-space-space-halfunit);
+            white-space: nowrap;
+            border-color: var(--dl-color-theme-primary1);
+            border-width: 1px;
+            display: inline-block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .special-button-filled.button1 a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .special-button-filled {
+            gap: var(--dl-space-space-halfunit);
+            fill: var(--dl-color-theme-secondary1);
+            color: var (--dl-color-theme-secondary1);
+            cursor: pointer;
+            display: flex;
+            transition: 0.3s;
+            align-items: center;
+            font-weight: bold;
+            padding-top: var (--dl-space-space-halfunit);
+            white-space: nowrap;
+            border-color: var(--dl-color-theme-primary1);
+            border-width: 1px;
+            padding-left: var(--dl-space-space-oneandhalfunits);
+            border-radius: var(--dl-radius-radius-buttonradius);
+            padding-right: var(--dl-space-space-oneandhalfunits);
+            padding-bottom: var(--dl-space-space-halfunit);
+            justify-content: center;
+            background-color: var(--dl-color-theme-primary1);
+        }
+        
+        .special-button-filled:hover {
+            fill: var(--dl-color-theme-secondary2);
+            color: var(--dl-color-theme-secondary2);
+            border-color: var(--dl-color-theme-primary2);
+            background-color: var(--dl-color-theme-primary2);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-family: 'STIX Two Text', serif;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #0a0a0a;
+        }
+        h2 {
+            color: #4b6a40;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .navbar-container {
+            background-color: var(--dl-color-theme-neutral-light);
+        }
+
+        .navbar-mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dl-color-theme-neutral-light);
+            z-index: 1000;
+        }
+
+        .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
+            display: flex;
+        }
+
+        .navbar-close-menu {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <navbar-wrapper class="navbar-wrapper">
+        <header class="navbar-container">
+          <header data="special-navbar" class="navbar-navbar-interactive">
+            <a href="./index.html">
+              <img
+                alt="EcoEats Logo"
+                src="./ecoeatslogo.png"
+                class="navbar-image1"
+              />
+              </a>
+            <div data="special-navbar-nav" class="navbar-desktop-menu">
+              <nav class="navbar-links1">
+                <span class="special-link special-body-small">
+                  <a href="./index.html">Home</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./menu.html">Menu</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./aboutUs.html">Sustainability</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./contactUs.html">Visit Us</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./reservations.html">Reservations</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./references.html">References</a>
+                </span>
+              </nav>
+            </div>
+            <style>
+              .navbar-container {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+              }
+              .home-container {
+                padding-top: 60px;
+              }
+              </style>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="navbar-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="navbar-icon1">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </label>
+            <div data="special-mobile-menu" class="navbar-mobile-menu">
+              <div class="navbar-nav">
+                <div class="navbar-top">
+                  <a href="./index.html">
+                    <img
+                      alt="EcoEats Logo"
+                      src="./ecoeatslogo.png"
+                      class="navbar-image1"
+                    />
+                    </a>
+                  <label for="menu-toggle" class="navbar-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </label>
+                </div>
+                <nav class="navbar-links2">
+                  <span class="special-link special-body-small">
+                    <a href="./index.html">Home</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./menu.html">Menu</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./aboutUs.html">Sustainability</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./contactUs.html">Visit Us</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./reservations.html">Reservations</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./references.html">References</a>
+                  </span>
+                </nav>
+              </div>
+            </div>
+          </header>
+        </header>
+      </navbar-wrapper>
+    <div class="container">
+        <h1>Visit Us</h1>
+        
+        <div class="map-container" style="border-radius: 15px; overflow: hidden; border: 5px solid #4CAF50;"></div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.123456789!2d-97.8271234!3d30.5123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b123456789ab%3A0x123456789abcdef!2s3300%20Brushy%20Creek%20Rd%2C%20Cedar%20Park%2C%20TX%2078613!5e0!3m2!1sen!2sus!4v1698765432100&z=14" allowfullscreen></iframe>
+        </div>
+        
+        <div class="info-container">
+            <div class="info">
+                <h2>Contact Information</h2>
+                <p class="special-body-small">Phone: +1-123-456-7890</p>
+                <p class="special-body-small">Email: info@ecoeats.com</p>
+                <p class="special-body-small">Address: 3300 Brushy Creek Rd, Cedar Park, TX 78613</p>
+            </div>
+            <div class="info">
+                <h2>Business Hours</h2>
+                <p class="special-body-small">Monday - Friday: 10:00 AM - 9:00 PM</p>
+                <p class="special-body-small">Saturday: 11:00 AM - 10:00 PM</p>
+                <p class="special-body-small">Sunday: 11:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+        
+        <button class="special-button-filled button1">
+            <span class="special-body-small"><a href="./reservations.html">Make a Reservation</a></span>
+        </button>
+    </div>
+
+    <footer-wrapper class="footer-wrapper">
+        <footer class="footer-footer1 special-section-padding">
+            <div class="footer-max-width">
+                
+                <div class="footer-credits">
+                    <div class="special-divider-horizontal"></div>
+                    <span class="special-body-small">
+                        <span>© 2025 EcoEats. All rights reserved.</span>
+                    </span>
+                </div>
+            </div>
+        </footer>
+    </footer-wrapper>
+</body>
+</html>
