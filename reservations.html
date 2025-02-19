@@ -173,6 +173,10 @@
             padding-top: 60px;
         }
 
+        textarea{
+          resize: none;
+        }
+
         @media (max-width: 768px) {
             .info-container {
                 flex-direction: column;
@@ -307,7 +311,7 @@
                 </select>
 
                 <label for="message">Other Important Information</label>
-                <textarea id="message" name="message" rows="4" placeholder="Enter any other important information"></textarea>
+                <textarea id="message" name="message" rows="4" cols="80" maxlength="500" placeholder="Enter any other important information"></textarea>
                 <button type="submit"; class="special-button-animated special-button-filled steps-button">Book Now</button>
             </form>
         </section>
