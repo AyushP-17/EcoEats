@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap">
+    <title>Sustainability - EcoEats</title>
+    <link rel="stylesheet" href="./index.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--dl-color-theme-neutral-light);
+            color: #333;
+            margin: 50px 0px 0px;
+            padding: 60px 0px 0px;
+            overflow-x: hidden;
+        }
+        header {
+            font-family: inherit;
+            background-color: var(--dl-color-theme-neutral-light);
+            color: black;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        .section img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .section .text-content {
+            padding: 10px 0;
+        }
+        .footer-wrapper {
+            display: contents;
+        }
+        .footer-footer1 {
+            width: 100%;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            align-items: center;
+            flex-shrink: 0;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .footer-max-width {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .footer-content {
+            gap: var(--dl-space-space-fourunits);
+            width: 100%;
+            display: flex;
+            align-self: stretch;
+            align-items: flex-start;
+            flex-shrink: 0;
+            border-radius: var(--dl-radius-radius-radius4);
+        }
+        .footer-text-input {
+            gap: 8px;
+            width: 100%;
+            height: 32px;
+            display: flex;
+            font-size: 16px;
+            box-sizing: content-box;
+            text-align: left;
+            align-items: center;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            background-color: transparent;
+        }
+
+        .special-divider-horizontal {
+            width: 85%;
+            height: 1px;
+            background-color: var(--dl-color-theme-neutral-dark);
+        }
+
+        .special-body-small {
+            font-size: 16px;
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-weight: 700;
+            line-height: 1.5;
+            font-family: 'STIX Two Text', serif;
+            
+        }
+        h2 {
+            color: #312c29;
+        }
+
+        .eco-eats {
+          font-family: 'Noto Sans', sans-serif;
+          font-size: 24px;
+          font-weight: 200;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          padding-bottom: 5px;        
+        }
+
+        .headline {
+          color: #312c29;
+          font-size: 42px;
+          font-weight: bold;
+          margin: 10px;
+          font-family: 'STIX Two Text', serif;
+        }
+
+        .description {
+          font-family: 'Roboto', sans-serif;
+          font-size: 18px;
+          line-height: 1.6;
+          margin-bottom: 20px;
+          padding-bottom: 5px;
+        }
+
+        p {
+          font-family: 'Roboto', sans-serif;
+          font-size: 15px;
+          line-height: 1.2;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .navbar-container {
+            background-color: var(--dl-color-theme-neutral-light);
+        }
+
+        .navbar-mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dl-color-theme-neutral-light);
+            z-index: 1000;
+        }
+
+        .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
+            display: flex;
+        }
+
+        .navbar-close-menu {
+            cursor: pointer;
+        }
+
+        .support-cause {
+          text-align: center;
+          padding: 20px;
+        }
+
+        .support-cause h2 {
+          font-size: 28px;
+          font-family: "STIX Two Text", serif;
+          margin-bottom: 10px;
+        }
+
+        .support-cause p {
+          font-style: italic;
+          margin-bottom: 20px;
+          font-size: 16px;
+        }
+
+        .btn-group {
+          display: inline-flex;
+          gap: 20px;
+        }
+
+        .btn {
+          display: inline-block;
+          padding: 10px 46px;
+          border-radius: 30px;
+          font-size: 16px;
+          text-decoration: none;
+          text-align: center;
+          font-family: 'Noto Sans', sans-serif;
+          transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .btn-green {
+          background-color: #06792e;
+          color: #fff;
+          border: none;
+        }
+        .btn-green:hover {
+          background-color: #075422;
+        }
+
+        .btn-outline {
+          background-color: transparent;
+          border: 2px solid #06792e;
+          color: #06792e;
+        }
+        .btn-outline:hover {
+          background-color: #075422;
+          color: #fff;
+        }
+
+        .icon {
+          display: inline-block;
+          width: 160px;
+          height: 160px;
+        }
+
+        .icon svg {
+          width: 100%;
+          height: 100%;
+          fill: #06792e; 
+        }
+
+            
+        .progress-bar-container {
+          position: fixed;
+          bottom: 20px;
+          max-width: 900px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 80%;
+          background: rgba(40, 39, 38, 0.65);
+          border-radius: 40px;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 9999;
+          transition: top 0.3s ease, bottom 0.3s ease;
+        }
+
+        .farm-icon,
+        .restaurant-icon {
+          width: 30px;
+          height: auto;
+        }
+
+        .progress-line-wrapper {
+          flex: 1;
+          position: relative;
+          height: 6px;
+          margin: 0 20px;
+        }
+
+        .traveled-line,
+        .to-travel-line {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 3px;
+        }
+
+        .traveled-line {
+          left: 0;
+          background: repeating-linear-gradient(
+            to right,
+            #444,
+            #444 2px,
+            transparent 2px,
+            transparent 9px
+          );
+        }
+
+        .to-travel-line {
+          background: repeating-linear-gradient(
+            to right,
+            #fff,
+            #fff 2px,
+            transparent 2px,
+            transparent 9px
+          );
+        }
+
+        .truck-icon {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 40px;
+          height: auto;
+          transition: transform 0.1s linear;
+          z-index: 1;
+        }
+
+        .farm-to-table-section {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 50px 20px;
+        }
+        .farm-to-table-section h2 {
+          font-size: 36px;
+          margin-bottom: 40px;
+          text-transform: uppercase;
+          font-family: Georgia, serif;
+          text-align: center;
+        }
+
+        .farm-to-table-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .farm-to-table-section h2 {
+      font-size: 36px;
+      text-transform: uppercase;
+      font-family: Georgia, serif;
+      margin-bottom: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .farm-to-table-section h2::before,
+    .farm-to-table-section h2::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background-color: #333;
+      margin: 0 20px;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .farm-to-table-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+
+    .farm-to-table-section h2 {
+      font-size: 36px;
+      text-transform: uppercase;
+      font-family: "STIX Two Text", serif;
+      margin-bottom: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .farm-to-table-section h2::before,
+    .farm-to-table-section h2::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background-color: #333;
+      margin: 0 20px;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .info-card {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      min-height: 220px;
+      overflow: visible;
+    }
+    .card-layer1,
+    .card-layer2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      z-index: 0;
+    }
+    .card-layer1 {
+      background: #8cc98993;
+    }
+    .card-layer2 {
+      background: #d9d1b3;
+    }
+    .card-content {
+      position: relative;
+      background: #fff;
+      border-radius: 15px;
+      padding: 0px 20px;
+      z-index: 1;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .image-container {
+      position: relative;
+      flex-shrink: 0;
+      z-index: 2;
+    }
+    .image-layer {
+      position: absolute;
+      z-index: -1;
+      top: -8px;
+      left: 12px;
+      width: 220px;
+      height: 220px;
+      background: #06792e;
+      border-radius: 12%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    .card-image-larger {
+      width: 220px;
+      height: 220px; 
+      object-fit: cover;
+      border-radius: 24px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    }
+
+    .card-text {
+      flex: 1;
+      text-align: left;
+    }
+    .card-text h3 {
+      font-family: "Noto Sans", sans-serif;
+      font-weight: 700px;
+      color: #138116;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+    .card-text p {
+      line-height: 1.6;
+    }
+
+    .info-card.left-variant .card-layer1 {
+      top: 6px;
+      left: -6px;
+    }
+    .info-card.left-variant .card-layer2 {
+      top: 10px;
+      left: 10px;
+    }
+    .info-card.left-variant .card-content {
+      flex-direction: row;
+    }
+    .info-card.left-variant .image-container {
+      margin-left: -40px;
+    }
+
+    .info-card.right-variant .card-layer1 {
+      top: 3px;
+      right: -6px;
+    }
+    .info-card.right-variant .card-layer2 {
+      top: 10px;
+      right: 10px;
+    }
+    .info-card.right-variant .card-content {
+      flex-direction: row-reverse;
+    }
+    .info-card.right-variant .image-container {
+      margin-right: -20px;
+    }
+   
+
+    .alt-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 20px auto;
+      align-items: center;
+      margin: 0px 30px;
+    }
+
+    .alt-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 800px;
+      background: #fff;
+      border-radius: 30px;
+      padding: 20px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      text-align: left;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .alt-card-text {
+      flex: 1;
+      font-family: 'Noto Sans', sans-serif;
+      margin: 0 20px;
+    }
+    .alt-card-text h3 {
+      font-size: 32px;
+      font-family: 'Lilita One', sans-serif;
+      text-transform: uppercase;
+      margin: 10px 0px;
+      font-weight: bold;
+    }
+    .alt-card-text p {
+      margin: 0px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .alt-card-icon {
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .alt-card-icon img {
+      width: 80px;
+      margin: 0px 20px;
+      height: auto;
+      display: block;
+      transition: filter 0.2s ease;
+    }
+
+    .alt-left-variant {
+      flex-direction: row;
+    }
+    .alt-right-variant {
+      flex-direction: row-reverse;
+    }
+
+    
+    .alt-card:hover {
+      background: #1b7906;
+      color: #fff;
+      transform: translate(-5px, -5px);
+      box-shadow: 5px 5px 0 #044219;
+    }
+    .alt-card:hover .alt-card-icon img {
+      filter: brightness(0) invert(1);
+    }
+    .alt-card:hover h3,
+    .alt-card:hover p {
+      color: #fff;
+    }
+
+    .pledge-section {
+      max-width: 1200px;
+      margin: 0px 30px auto;
+      padding: 50px 20px;
+      text-align: center;
+      background: #d0cab8;
+      border-radius: 15px;
+    }
+
+    .pledge-heading {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .pledge-subheading {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .pledge-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .pledge-card {
+      position: relative;
+      background: #fff;
+      width: 200px;
+      border-radius: 10px;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .pledge-card:hover {
+      background: #1a6f09;
+      transform: translate(0px, -10px);
+      box-shadow: 0px 15px 0 #024612;
+    }
+
+    .pledge-image {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      background: #eee url('landscape1.png') no-repeat center/cover;
+    }
+
+    .pledge-card:hover .pledge-percentage, .pledge-card:hover .pledge-desc, .pledge-card:hover .pledge-note{
+      color: #fff;
+    }
+
+    .pledge-percentage {
+      font-size: 48px;
+      font-family: "Lilita One", sans-serif;
+      color: #021606;
+      margin: 10px 0 0px;
+    }
+
+    .pledge-desc {
+      font-family: "Lilita One", sans-serif;
+      font-size: 16px;
+      color: #17742a;
+      margin: 0px 4px 10px;
+    }
+
+    .pledge-note {
+      font-size: 11px;
+      font-family: "Noto Sans", sans-serif;
+      color: #677068;
+      margin-bottom: 20px;
+      padding: 0 10px;
+      font-style: italic;
+    }
+
+    @media (min-width: 1240px) {
+        .pledge-section {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .pledge-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .alt-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .alt-card-text {
+        margin: 10px 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card-content {
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .image-container {
+        margin: 0;
+      }
+    }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+      .fade-in-up {
+        animation: fadeInUp 0.6s ease-in-out;
+      }
+
+      @keyframes letterSpread {
+          from {
+            letter-spacing: -4px;
+          }
+          to {
+            letter-spacing: 5px;
+          }
+        }
+
+      .letter-spread {
+        animation: letterSpread 0.6s ease-in-out;
+      }
+
+      @keyframes swipeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes swipeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .swipe-in-left {
+        animation: swipeInLeft 0.8s ease-in-out;
+      }
+
+      .swipe-in-right {
+        animation: swipeInRight 0.8s ease-in-out;
+      }
+        
+      .alt-card {
+        position: relative; /* for the box-shadow offset effect */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 800px;
+        background: #fff;
+        border-radius: 30px; /* big pill shape */
+        padding: 20px 30px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        text-align: left;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease,
+          transform 0.2s ease;
+        text-decoration: none; /* remove default link underline */
+        color: inherit; /* inherit text color */
+      }
+    
+      .alt-card:hover {
+        background: #1b7906;          /* bright green background */
+        color: #fff;                  /* white text */
+        transform: translate(-5px, -5px);
+        box-shadow: 5px 5px 0 #044219; /* dark green shadow, no blur */
+      }
+    
+      .alt-card:hover .alt-card-icon img {
+        filter: brightness(0) invert(1); /* turn black icon -> white */
+      }
+    
+      .alt-card:hover h3,
+      .alt-card:hover p {
+        color: #fff; /* ensure text is white */
+      }
+    </style>
+</head>
+<body>
+    <navbar-wrapper class="navbar-wrapper">
+        <!--Navbar component-->
+        <header class="navbar-container">
+          <header data-thq="special-navbar" class="navbar-navbar-interactive">
+            <a href="./index.html">
+              <img
+                alt="EcoEats Logo"
+                src="./ecoeatslogo.png"
+                class="navbar-image1"
+              />
+              </a>
+            <div data-thq="special-navbar-nav" class="navbar-desktop-menu">
+              <nav class="navbar-links1">
+                <span class="special-link special-body-small">
+                  <a href="./index.html">Home</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./menu.html">Menu</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./sustainability.html">Sustainability</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./visitUs.html">Visit Us</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./reservations.html">Reservations</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./references.html">References</a>
+                </span>
+              </nav>
+            </div>
+            <style>
+              .navbar-container {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+              }
+              .home-container {
+                padding-top: 60px; /* Adjust this value based on the height of your navbar */
+              }
+              </style>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="navbar-burger-menu">
+              <svg viewBox="0 0 1024 1024" class="navbar-icon1">
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </label>
+            <div data-thq="special-mobile-menu" class="navbar-mobile-menu">
+              <div class="navbar-nav">
+                <div class="navbar-top">
+                  <a href="./index.html">
+                    <img
+                      alt="EcoEats Logo"
+                      src="./ecoeatslogo.png"
+                      class="navbar-image1"
+                    />
+                    </a>
+                  <label for="menu-toggle" class="navbar-close-menu">
+                    <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </label>
+                </div>
+                <nav class="navbar-links2">
+                  <span class="special-link special-body-small">
+                    <a href="./index.html">Home</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./menu.html">Menu</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./sustainability.html">Sustainability</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./visitUs.html">Visit Us</a>
+                  </span>
+                  
+                <span class="special-link special-body-small">
+                  <a href="./reservations.html">Reservations</a>
+                </span>
+                <span class="special-link special-body-small">
+                  <a href="./references.html">References</a>
+                </nav>
+              </div>
+            </div>
+          </header>
+        </header>
+      </navbar-wrapper>
+      <div class="container content fade-in-up">
+        <h1 class="eco-eats letter-spread">ECO EATS</h1>
+        <h2 class="headline">Revolutionizing Restaurants.</h2>   
+        <p class="description">
+          Every year, millions of tons of food are produced, 
+          a large portion of which ending up in landfills, open dumps, and even our oceans. 
+          In a fight against global warming, deforestation, disease, and hunger, 
+          EcoEats presents you how we're doing our part: making every meal a little greener.
+        </p>
+       <div class="icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="512" height="512"  viewBox="0 0 512 512">
+          <path d="M0 0 C1.41962036 -0.02102783 1.41962036 -0.02102783 2.86791992 -0.04248047 C18.82440295 0.06588746 31.10447778 6.24889507 42.25 17.375 C43.08144531 18.18904297 43.08144531 18.18904297 43.9296875 19.01953125 C58.182402 34.235267 63.9791221 56.65695449 63.4921875 77 C59.85927079 127.62645225 34.62451413 175.71070763 12.25 220.375 C13.02859375 220.24222656 13.8071875 220.10945312 14.609375 219.97265625 C21.97513953 218.81008742 29.30989635 218.03246609 36.75 217.5625 C37.59788086 217.49748291 38.44576172 217.43246582 39.31933594 217.36547852 C44.46748963 217.08315712 47.78512375 217.47146084 52.25 220.375 C56.08912234 224.32076463 58.15173808 228.12689768 58.3203125 233.69921875 C58.0072148 239.71253631 56.67033989 245.07666525 52.25 249.375 C46.76639782 252.79173703 41.75340953 254.0712965 35.37475586 254.56347656 C34.52651749 254.64208923 33.67827911 254.7207019 32.80433655 254.80169678 C30.02564818 255.05526195 27.24558056 255.28571299 24.46484375 255.515625 C22.51994684 255.68793808 20.57516945 255.86160495 18.63050842 256.03656006 C13.52661434 256.49169625 8.4211965 256.92678663 3.31524658 257.3581543 C-0.84680915 257.71324275 -5.0075237 258.08276439 -9.16825199 258.45303726 C-14.14428672 258.89553413 -19.12088944 259.331448 -24.09765625 259.765625 C-25.04129595 259.84814766 -25.98493565 259.93067032 -26.95717049 260.01569366 C-29.63921083 260.24867252 -32.32159097 260.47718659 -35.00415039 260.70410156 C-35.78928009 260.77262329 -36.57440979 260.84114502 -37.3833313 260.91174316 C-51.31878455 262.07284882 -51.31878455 262.07284882 -56.75 258.375 C-66.54111769 248.84092836 -65.41379824 233.39031118 -66.4765625 220.609375 C-66.63027025 218.80337376 -66.78436027 216.99740503 -66.93881226 215.19146729 C-67.25969485 211.42641691 -67.57703275 207.66109085 -67.89160156 203.89550781 C-68.29390685 199.08131235 -68.70351454 194.26777307 -69.11556435 189.45440292 C-69.43360042 185.73304721 -69.74859793 182.01143934 -70.062603 178.28974152 C-70.21256894 176.51474998 -70.36327748 174.73982102 -70.51475906 172.96495819 C-70.72584952 170.4843635 -70.93304191 168.0034731 -71.13916016 165.52246094 C-71.20147324 164.7981488 -71.26378632 164.07383667 -71.32798767 163.32757568 C-72.41397062 150.07122216 -72.41397062 150.07122216 -68.75 143.375 C-63.31232716 138.33520566 -59.44159904 137.90839846 -52.16015625 137.96484375 C-47.01209446 138.58402644 -43.3121411 140.62781261 -39.75 144.375 C-34.28649373 153.49357923 -34.72085843 165.50537635 -33.69140625 175.8984375 C-33.60024536 176.81455811 -33.50908447 177.73067871 -33.41516113 178.67456055 C-33.19298318 180.90799531 -32.97127124 183.14147526 -32.75 185.375 C-18.09115963 156.6283003 -4.05442202 127.98903926 6.8125 97.5625 C7.0612085 96.87142151 7.30991699 96.18034302 7.56616211 95.46832275 C12.83138201 80.74290499 16.37908006 65.90855901 18.25 50.375 C-2.338269 54.71376388 -21.19813359 61.47430424 -39.75 71.375 C-40.63526367 71.84035156 -41.52052734 72.30570312 -42.43261719 72.78515625 C-60.75643346 82.42472862 -78.39491664 92.87718539 -95.40795898 104.67944336 C-111.00496739 115.4991721 -111.00496739 115.4991721 -117.75 114.375 C-125.49135658 112.47138773 -130.18916683 107.92648723 -135.75 102.375 C-136.34167969 101.79492188 -136.93335938 101.21484375 -137.54296875 100.6171875 C-143.48711457 94.29102717 -147.3591106 85.65200696 -148 77 C-147.61315543 71.3907538 -145.98756449 68.53310338 -141.890625 64.69921875 C-136.77440708 60.41493834 -131.15839947 56.86804197 -125.5625 53.25 C-124.98764862 52.87716888 -124.41279724 52.50433777 -123.82052612 52.12020874 C-44.10660081 0.44548551 -44.10660081 0.44548551 0 0 Z " fill="#5B8551" transform="translate(432.75,33.625)"/>
+          <path d="M0 0 C1.4854834 0.76763672 1.4854834 0.76763672 3.00097656 1.55078125 C25.28273125 13.12294299 46.22920971 26.93972229 67 41 C66.93143799 40.21206055 66.86287598 39.42412109 66.79223633 38.61230469 C64.75148272 14.73713182 64.75148272 14.73713182 70 8 C74.3690657 3.3721034 78.60673805 0.41275273 85.05078125 -0.37109375 C92.44181119 -0.52156981 97.40315267 -0.02519784 103 5 C111.50397576 13.31499852 111.72305822 24.38666442 112.67578125 35.62109375 C112.81026259 37.13131987 112.94529779 38.64149677 113.08085632 40.15162659 C113.36113109 43.3036999 113.63319853 46.45634904 113.8996582 49.60961914 C114.23998305 53.62661147 114.60312541 57.64116206 114.97279072 61.65554714 C115.25658204 64.76987669 115.52691898 67.88526835 115.79347801 71.0011158 C115.92188239 72.48089097 116.05461557 73.96029781 116.19198036 75.43926811 C117.0606805 84.88031395 117.65027482 93.59751671 113.375 102.3125 C106.92304033 109.61340173 98.71292424 111.92171312 89.19775391 112.79370117 C87.88594147 112.91690231 86.57412903 113.04010345 85.2225647 113.16703796 C83.80726708 113.29275927 82.39193198 113.41805913 80.9765625 113.54296875 C79.50594091 113.67669393 78.03535014 113.81075841 76.56478882 113.94514465 C73.49052232 114.22441668 70.41585208 114.49857632 67.34082031 114.76928711 C63.42071961 115.11494831 59.50207885 115.47485687 55.58364296 115.83884716 C52.54883199 116.11887401 49.51330826 116.3904567 46.47751999 116.65966225 C45.03334084 116.78887639 43.58940354 116.9208267 42.14574051 117.05568504 C23.50468419 118.78670175 23.50468419 118.78670175 16.8125 115.375 C11.15071903 110.59394051 6.56886293 105.79564677 5.6640625 98.16796875 C5.56345829 90.49186779 6.32090048 85.08892327 11.54296875 79.28515625 C18.09482419 73.15309933 24.91001858 71.72392649 33.6796875 71.2109375 C36.02382936 71.13991838 36.02382936 71.13991838 38 70 C10.85455675 52.46984008 -17.28500802 35.43231012 -48 25 C-49.0621875 24.62101562 -50.124375 24.24203125 -51.21875 23.8515625 C-58.907139 21.38675544 -69.10702504 20.07330448 -76.7578125 23.0859375 C-80.38240829 26.18010464 -81.65515843 29.63640918 -82.32470703 34.22558594 C-84.81928185 67.5183038 -69.57382754 101.39009324 -56 131 C-55.00250644 133.2095913 -54.00511475 135.41922859 -53.0078125 137.62890625 C-43.23684092 159.11385443 -32.6587373 180.26325603 -20.88012695 200.72509766 C-17.35512133 206.90095045 -16.32439943 211.93690313 -17 219 C-18.68705787 223.70600353 -20.83290666 226.25581658 -25 229 C-31.64638612 231.75022874 -38.83109966 229.9146232 -45.203125 227.37109375 C-66.65420619 216.85527043 -76.95306787 187.72738495 -86.83154297 167.38574219 C-88.21412634 164.56279929 -89.6259701 161.75506855 -91.03515625 158.9453125 C-108.72633071 123.35399264 -124.41617701 86.16346727 -132 47 C-132.24492187 45.78054687 -132.48984375 44.56109375 -132.7421875 43.3046875 C-135.81255861 25.51335904 -136.13583975 5.34971192 -126.72265625 -10.5625 C-120.04587042 -20.00992485 -109.12785581 -25.30669671 -98 -27.625 C-63.87089975 -31.64018827 -29.48863191 -15.41310289 0 0 Z " fill="#5B8551" transform="translate(149,71)"/>
+          <path d="M0 0 C4.51745988 5.86048849 5.83335465 10.7462933 5 18 C3.20256807 23.85449256 0.47757862 27.08639435 -5 30 C-8.31796019 31.10598673 -11.14608524 31.30651213 -14.63671875 31.53515625 C-15.93544922 31.62216797 -17.23417969 31.70917969 -18.57226562 31.79882812 C-19.94400494 31.88680424 -21.3157498 31.97469376 -22.6875 32.0625 C-24.07098756 32.15393414 -25.45445148 32.24572683 -26.83789062 32.33789062 C-30.225044 32.56212726 -33.61239699 32.78267968 -37 33 C-36.32533691 33.73081787 -35.65067383 34.46163574 -34.95556641 35.21459961 C-29.9331735 40.66688311 -25.13217437 46.2232603 -20.47265625 51.9921875 C-17.58319725 55.50701125 -14.61321307 58.94413715 -11.625 62.375 C-7.07476541 67.59985633 -2.56319765 72.85315639 1.90136719 78.15136719 C5.28481904 82.16384132 8.70095086 86.14714813 12.125 90.125 C16.46237867 95.16643102 20.69564541 100.28117461 24.88671875 105.4453125 C28.1514958 109.39201156 31.5610345 113.20495633 35 117 C41.17820108 109.72672095 46.86759381 102.16830202 52.49267578 94.46557617 C56.56849357 88.90057996 60.74071279 83.42558466 65 78 C70.33322184 71.19997505 75.50229383 64.29724587 80.60498047 57.32299805 C85.70285984 50.36857118 90.91064934 43.50199508 96.15942383 36.66088867 C99.29577973 32.56927416 102.40696857 28.4666186 105.43359375 24.29296875 C105.9651709 23.56489014 106.49674805 22.83681152 107.04443359 22.08666992 C108.01614757 20.75099295 108.97955541 19.40920867 109.93212891 18.05981445 C113.67008316 12.94170309 117.85500853 9.04833049 124 7 C133.84216083 6.1579638 141.69090176 7.02009712 149.69921875 13.0234375 C156.11435255 18.51142058 160.60346507 23.27368644 162 31.8125 C162.4815941 41.18025182 157.42577905 48.42954874 151.6875 55.375 C150.42664958 56.9478288 149.16759719 58.52210032 147.91015625 60.09765625 C146.93973389 61.30639404 146.93973389 61.30639404 145.94970703 62.53955078 C142.75759086 66.56786869 139.69308449 70.68940655 136.625 74.8125 C131.43823134 81.7622024 126.20626595 88.67477213 120.9375 95.5625 C115.89308677 102.16179801 110.90944622 108.79970421 106 115.5 C100.43649214 123.09294362 94.76404481 130.59639762 89.04663086 138.07397461 C84.35410974 144.21375905 79.6967467 150.37862769 75.0625 156.5625 C74.43802979 157.39257568 73.81355957 158.22265137 73.17016602 159.07788086 C70.51067522 162.61804966 67.86715067 166.1633699 65.30859375 169.77734375 C59.89280016 177.33746171 55.4646792 181.75310446 46.1640625 183.74609375 C35.94084877 184.94556829 26.932369 181.12033458 19.015625 174.87109375 C15.81364971 171.89871747 13.17460649 168.53822331 10.47265625 165.11328125 C7.78801946 161.73309875 5.00640057 158.45553357 2.1875 155.1875 C1.683396 154.60121826 1.17929199 154.01493652 0.65991211 153.41088867 C-0.89222163 151.60624766 -2.44588201 149.80293238 -4 148 C-15.4242669 134.74670726 -15.4242669 134.74670726 -20.4375 128.5625 C-25.59186792 122.21723119 -30.97362765 116.07490552 -36.34033203 109.90966797 C-43.24042148 101.97020053 -50.0869637 93.99733994 -56.671875 85.79296875 C-60.0192824 81.77720317 -63.51159067 77.89333298 -67 74 C-66.98428955 74.87736816 -66.9685791 75.75473633 -66.95239258 76.65869141 C-66.90105624 79.93511952 -66.86355003 83.21111598 -66.83520508 86.48779297 C-66.82018175 87.90192437 -66.79975695 89.31600968 -66.77368164 90.72998047 C-66.73701046 92.77062397 -66.72020964 94.81064792 -66.70703125 96.8515625 C-66.6913208 98.07697754 -66.67561035 99.30239258 -66.65942383 100.56494141 C-67.16518226 105.66603183 -68.76957234 108.88961406 -72.5625 112.3125 C-77.75902787 115.91009622 -82.8136472 115.6813505 -89 115 C-93.58960501 113.31253825 -96.29313912 111.09449426 -98.9375 107 C-100.75605082 101.86526827 -101.21592818 96.88733031 -101.48071289 91.47509766 C-101.5198732 90.73458664 -101.55903351 89.99407562 -101.59938049 89.23112488 C-101.72740785 86.79227628 -101.85013188 84.35319326 -101.97265625 81.9140625 C-102.0606375 80.21160506 -102.14889342 78.50916179 -102.2374115 76.80673218 C-102.42203365 73.24105939 -102.60418231 69.67527186 -102.78442383 66.109375 C-103.01491302 61.55089 -103.250211 56.9926697 -103.48720646 52.43451881 C-103.66968578 48.91890876 -103.8502643 45.40320317 -104.03021049 41.88746262 C-104.11630055 40.20740952 -104.20281876 38.5273783 -104.28978157 36.84737015 C-104.41123668 34.49289902 -104.53029453 32.13831855 -104.64868164 29.78369141 C-104.68451355 29.0967067 -104.72034546 28.40972198 -104.75726318 27.70191956 C-105.42757461 14.1696343 -105.42757461 14.1696343 -102 8 C-97.52986942 3.13166813 -92.49324225 0.86350729 -85.96044922 0.51342773 C-84.98107391 0.45674423 -84.00169861 0.40006073 -82.99264526 0.34165955 C-81.41460617 0.26341698 -81.41460617 0.26341698 -79.8046875 0.18359375 C-78.7026297 0.12220718 -77.6005719 0.06082062 -76.46511841 -0.00242615 C-72.9354623 -0.197135 -69.40530532 -0.37998114 -65.875 -0.5625 C-63.55334292 -0.68867349 -61.23172765 -0.81561897 -58.91015625 -0.94335938 C-53.30664036 -1.24977196 -47.70264851 -1.54595985 -42.09835815 -1.83782959 C-39.18464639 -1.99033547 -36.2711282 -2.14602928 -33.35766602 -2.30322266 C-32.49758942 -2.34938217 -31.63751282 -2.39554169 -30.75137329 -2.44309998 C-29.1923246 -2.52678356 -27.63330082 -2.61093359 -26.0743103 -2.69569397 C-6.19091225 -3.75313094 -6.19091225 -3.75313094 0 0 Z " fill="#5A8551" transform="translate(244,307)"/>
+          </svg>          
+        </div>
+      </div>
+
+
+      <section class="farm-to-table-section fade-in-up">
+        <h2>FARM-TO-TABLE</h2>
+    
+        <div class="cards-container">
+          <!-- CARD 1 (Left Variant) -->
+          <div class="info-card left-variant swipe-in-left">
+            <div class="card-layer1"></div>
+            <div class="card-layer2"></div>
+            <div class="card-content">
+              <!-- Large image container with its own background layer -->
+              <div class="image-container">
+                <div class="image-layer"></div>
+                <img 
+                  src="farm.jpg" 
+                  alt="Landscape" 
+                  class="card-image-larger" 
+                />
+              </div>
+              <div class="card-text">
+                <h3>Thoughtful Sourcing</h3>
+                <p>
+                  We work with local farms and ethical suppliers to bring you fresh, 
+                  seasonal ingredients that support our community and reduce carbon footprints. 
+                  Our pesticide-free ingredients, biodegradable packaging, and carbon-neutral energy come from humane sources.
+                </p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- CARD 2 (Right Variant) -->
+          <div class="info-card right-variant swipe-in-right">
+            <div class="card-layer1"></div>
+            <div class="card-layer2"></div>
+            <div class="card-content">
+              <!-- Large image container with its own background layer -->
+              <div class="image-container">
+                <div class="image-layer"></div>
+                <img 
+                  src="cafe.jpg" 
+                  alt="Landscape" 
+                  class="card-image-larger" 
+                />
+              </div>
+              <div class="card-text">
+                <h3>Wasteless Operations</h3>
+                <p>
+                  From our energy-efficient LED lighting to our low-flow water systems, 
+                  we’re committed to cutting down on waste without cutting corners.
+                  We also compost food scraps and donate surplus food to ensure nothing good 
+                  goes to waste.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card left-variant swipe-in-left">
+            <div class="card-layer1"></div>
+            <div class="card-layer2"></div>
+            <div class="card-content">
+              <!-- Large image container with its own background layer -->
+              <div class="image-container">
+                <div class="image-layer"></div>
+                <img 
+                  src="rice_bowl.jpg" 
+                  alt="Landscape" 
+                  class="card-image-larger" 
+                />
+              </div>
+              <div class="card-text">
+                <h3>Giving Back</h3>
+                <p>
+                  Every plate you enjoy helps us give back! We partner with local shelters 
+                  and food banks to donate meals to those in need. Plus, we reward eco-conscious 
+                  choices—bring your own cup or container, and enjoy a discount as a thank-you 
+                  for reducing waste with us.
+                </p>
+              </div>
+            </div>
+        </div>
+      </section>
+ <!-- Progress Bar -->
+ <div class="progress-bar-container">
+  <!-- Farm Icon (start) -->
+  <img src="farm-icon.png" alt="Farm icon" class="farm-icon" />
+
+  <!-- Track wrapper: contains two segments and the truck -->
+  <div class="progress-line-wrapper">
+    <!-- Traveled (dark grey) segment -->
+    <div class="traveled-line"></div>
+    <!-- To-Travel (white) segment -->
+    <div class="to-travel-line"></div>
+    <!-- Truck Icon -->
+    <img src="truck-icon.png" alt="Truck icon" class="truck-icon" />
+  </div>
+
+  <!-- Restaurant Icon (end) -->
+  <img src="restaurant-icon.png" alt="Restaurant icon" class="restaurant-icon" />
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const truckIcon = document.querySelector(".truck-icon");
+    const progressLineWrapper = document.querySelector(".progress-line-wrapper");
+    const traveledLine = document.querySelector(".traveled-line");
+    const toTravelLine = document.querySelector(".to-travel-line");
+    const progressBar = document.querySelector(".progress-bar-container");
+
+    // Set the scroll value at which full progress is reached.
+    const freezeScrollPoint = 800;
+    const gap = 60;
+
+    function moveTruckOnScroll() {
+      const scrollTop = window.scrollY;
+      // Calculate a fraction (0 to 1) based on the freeze point.
+      const fraction = Math.min(1, scrollTop / freezeScrollPoint);
+
+      // Keep the progress bar fixed until the freeze point is reached.
+      if (scrollTop < freezeScrollPoint *1.02) {
+        progressBar.style.position = 'fixed';
+        progressBar.style.bottom = '20px';
+        progressBar.style.top = 'auto';
+        if (progressBar.style.opacity = '0')
+        {
+          progressBar.style.transition = 'opacity 0.5s ease';
+          progressBar.style.opacity = '1';
+        }
+      } else {
+        // Once the freeze point is reached, fade out the progress bar.
+        progressBar.style.transition = 'opacity 0.5s ease';
+        progressBar.style.opacity = '0';
+      }
+        // Get the width of the entire track container.
+        const lineWidth = progressLineWrapper.offsetWidth;
+        // Get the truck icon's width.
+        const truckWidth = truckIcon.offsetWidth;
+        // Define the maximum travel distance for the gap's left edge.
+        const maxTravel = lineWidth - gap;
+        // Compute the truck gap's left edge based on scroll fraction.
+        const truckPos = fraction * maxTravel;
+        // Center the truck inside the gap.
+        const truckOffset = (gap - truckWidth) / 2;
+        truckIcon.style.transform = `translate(${truckPos + truckOffset}px, -50%)`;
+
+        // Update the traveled segment to span from the left edge to the left edge of the gap.
+        traveledLine.style.width = truckPos + "px";
+        // The to-travel segment starts at the right edge of the gap.
+        const toTravelWidth = lineWidth - truckPos - gap;
+        toTravelLine.style.width = toTravelWidth + "px";
+        toTravelLine.style.left = (truckPos + gap) + "px";
+    }
+
+    window.addEventListener("scroll", moveTruckOnScroll);
+    moveTruckOnScroll();
+  });
+</script>
+
+<section class="farm-to-table-section fade-in-up">
+  <h2>WHY IT MATTERS</h2>
+
+  <div class="alt-cards-container">
+
+    <!-- Card 1: Left variant by default -->
+    <a href="https://moveforhunger.org/blog/beyond-menu-food-waste-americas-restaurant-industry" class="alt-card alt-left-variant">
+      <div class="alt-card-text">
+        <h3>FOOD WASTE</h3>
+        <p>
+          The U.S. restaurant industry generates approximately
+          22 to 33 billion lbs of food waste annually.
+        </p>
+      </div>
+      <div class="alt-card-icon">
+        <img src="icon-food.png" alt="Food waste icon" />
+      </div>
+    </a>
+
+    <!-- Card 2: Right variant -->
+    <a href="https://orders.co/blog/restaurants-and-social-responsibility-the-future-of-sustainability-in-the-industry" class="alt-card alt-right-variant">
+      <div class="alt-card-text">
+        <h3>PLASTIC PREDICAMENT</h3>
+        <p>
+          The food service industry is responsible for about
+          44% of all plastic waste worldwide.
+        </p>
+      </div>
+      <div class="alt-card-icon">
+        <img src="icon-plastic.png" alt="Plastic waste icon" />
+      </div>
+    </a>
+
+    <!-- Card 3: Left variant again -->
+    <a href="https://shapiroe.com/blog/junk-food-waste" class="alt-card alt-left-variant">
+      <div class="alt-card-text">
+        <h3>ENERGY ENGINES</h3>
+        <p>
+          Restaurants consume up to 2.5 times more energy per
+          square foot than other commercial buildings,
+          remarkably intensive.
+        </p>
+      </div>
+      <div class="alt-card-icon">
+        <img src="icon-energy.png" alt="Energy icon" />
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="pledge-section">
+  <!-- Section Headings -->
+  <h2 class="pledge-heading">Our Pledge</h2>
+  <p class="pledge-subheading">
+    Sustainability isn't just a trend—it's our promise.
+  </p>
+
+  <!-- Container for the 3 pledge cards -->
+  <div class="pledge-cards">
+    <!-- Card 1 -->
+    <div class="pledge-card">
+      <div class="pledge-image" style="background-image: url('./cafe.jpg');"></div>
+      <div class="pledge-percentage">30%</div>
+      <div class="pledge-desc">less energy use by 2040</div>
+      <div class="pledge-note">
+        with LED lighting and high-efficiency appliances
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="pledge-card">
+      <div class="pledge-image" style="background-image: url('./volunteering.jpg');"></div>
+      <div class="pledge-percentage">90%</div>
+      <div class="pledge-desc">waste diversion by 2028</div>
+      <div class="pledge-note">
+        through composting and biodegradable packaging
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="pledge-card">
+      <div class="pledge-image" style="background-image: url('./rural-truck.png');"></div>
+      <div class="pledge-percentage">60%</div>
+      <div class="pledge-desc">locally sourced ingredients by 2026</div>
+      <div class="pledge-note">
+        from organic farms within 100 miles
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="support-cause">
+    <h2>So why not support the cause?</h2>
+    <p>It would mean the world! (and taste amazing)</p>
+    <div class="btn-group">
+      <a href="visitUs.html" class="btn btn-green"> I'll Visit!</a>
+      <a href="menu.html" class="btn btn-outline">Explore Menu →</a>
+</div>
+
+    <footer-wrapper class="footer-wrapper">
+        <!--Footer component-->
+        <footer class="footer-footer1 special-section-padding">
+          <div class="footer-credits">
+            <div class="special-divider-horizontal"></div>
+              <span class="special-body-small">
+                <span>© 2025 EcoEats. All rights reserved.</span>
+              </span>
+          </div>
+        </footer>
+      </footer-wrapper>
+</body>
+</html>
