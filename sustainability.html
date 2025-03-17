@@ -105,10 +105,11 @@
             font-weight: 700;
             line-height: 1.5;
             font-family: 'STIX Two Text', serif;
+            color: #202309;
             
         }
         h2 {
-            color: #312c29;
+            color: #202309;
         }
 
         .eco-eats {
@@ -773,14 +774,72 @@
       .alt-card:hover h3,
       .alt-card:hover p {
         color: #fff; /* ensure text is white */
+      }.menu-toggle {
+        display: none;
+      }
+
+      .navbar-container {
+        background-color: var(--dl-color-theme-neutral-light);
+      }
+
+      .navbar-mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--dl-color-theme-neutral-light);
+        z-index: 1000;
+      }
+
+      .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
+        display: flex;
+      }
+
+      .navbar-close-menu {
+        cursor: pointer;
       }
     </style>
 </head>
+    <style data-tag="reset-style-sheet">
+      *{  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}
+      </style>
+    <style>
+      .menu-toggle {
+        display: none;
+      }
+
+      .navbar-container {
+        background-color: var(--dl-color-theme-neutral-light);
+      }
+
+      .navbar-mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--dl-color-theme-neutral-light);
+        z-index: 1000;
+      }
+
+      .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
+        display: flex;
+      }
+
+      .navbar-close-menu {
+        cursor: pointer;
+      }
+    </style>
+  </head>
 <body>
     <navbar-wrapper class="navbar-wrapper">
-        <!--Navbar component-->
         <header class="navbar-container">
-          <header data-thq="special-navbar" class="navbar-navbar-interactive">
+          <header data="special-navbar" class="navbar-navbar-interactive">
             <a href="./index.html">
               <img
                 alt="EcoEats Logo"
@@ -788,7 +847,7 @@
                 class="navbar-image1"
               />
               </a>
-            <div data-thq="special-navbar-nav" class="navbar-desktop-menu">
+            <div data="special-navbar-nav" class="navbar-desktop-menu">
               <nav class="navbar-links1">
                 <span class="special-link special-body-small">
                   <a href="./index.html">Home</a>
@@ -818,7 +877,7 @@
                 z-index: 1000;
               }
               .home-container {
-                padding-top: 60px; /* Adjust this value based on the height of your navbar */
+                padding-top: 60px; 
               }
               </style>
             <input type="checkbox" id="menu-toggle" class="menu-toggle" />
@@ -829,7 +888,7 @@
                 ></path>
               </svg>
             </label>
-            <div data-thq="special-mobile-menu" class="navbar-mobile-menu">
+            <div data="special-mobile-menu" class="navbar-mobile-menu">
               <div class="navbar-nav">
                 <div class="navbar-top">
                   <a href="./index.html">
@@ -839,13 +898,13 @@
                       class="navbar-image1"
                     />
                     </a>
-                  <label for="menu-toggle" class="navbar-close-menu">
-                    <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                    <label for="menu-toggle" class="navbar-close-menu">
+                      <svg viewBox="0 0 1024 1024" class="navbar-icon3">
                       <path
                         d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
                       ></path>
-                    </svg>
-                  </label>
+                      </svg>
+                    </label>
                 </div>
                 <nav class="navbar-links2">
                   <span class="special-link special-body-small">
@@ -860,12 +919,12 @@
                   <span class="special-link special-body-small">
                     <a href="./visitUs.html">Visit Us</a>
                   </span>
-                  
-                <span class="special-link special-body-small">
-                  <a href="./reservations.html">Reservations</a>
-                </span>
-                <span class="special-link special-body-small">
-                  <a href="./references.html">References</a>
+                  <span class="special-link special-body-small">
+                    <a href="./reservations.html">Reservations</a>
+                  </span>
+                  <span class="special-link special-body-small">
+                    <a href="./references.html">References</a>
+                  </span>
                 </nav>
               </div>
             </div>

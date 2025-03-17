@@ -144,42 +144,74 @@
             font-family: 'STIX Two Text', serif;
             font-weight: 700;
             line-height: 1.5;
-            color: #0a0a0a;
+            color: #202309;
         }
         h2 {
             color: #648251
             ;
         }
-
         .menu-toggle {
-            display: none;
-        }
+        display: none;
+      }
 
-        .navbar-container {
-            background-color: var(--dl-color-theme-neutral-light);
-        }
+      .navbar-container {
+        background-color: var(--dl-color-theme-neutral-light);
+      }
 
-        .navbar-mobile-menu {
-            display: none;
-            flex-direction: column;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--dl-color-theme-neutral-light);
-            z-index: 1000;
-        }
+      .navbar-mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--dl-color-theme-neutral-light);
+        z-index: 1000;
+      }
 
-        .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
-            display: flex;
-        }
+      .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
+        display: flex;
+      }
 
-        .navbar-close-menu {
-            cursor: pointer;
-        }
+      .navbar-close-menu {
+        cursor: pointer;
+      }
     </style>
 </head>
+    <style data-tag="reset-style-sheet">
+      *{  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}
+      </style>
+    <style>
+      .menu-toggle {
+        display: none;
+      }
+
+      .navbar-container {
+        background-color: var(--dl-color-theme-neutral-light);
+      }
+
+      .navbar-mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--dl-color-theme-neutral-light);
+        z-index: 1000;
+      }
+
+      .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
+        display: flex;
+      }
+
+      .navbar-close-menu {
+        cursor: pointer;
+      }
+    </style>
+  </head>
 <body>
     <navbar-wrapper class="navbar-wrapper">
         <header class="navbar-container">
@@ -221,7 +253,7 @@
                 z-index: 1000;
               }
               .home-container {
-                padding-top: 60px;
+                padding-top: 60px; 
               }
               </style>
             <input type="checkbox" id="menu-toggle" class="menu-toggle" />
@@ -242,13 +274,13 @@
                       class="navbar-image1"
                     />
                     </a>
-                  <label for="menu-toggle" class="navbar-close-menu">
-                    <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                    <label for="menu-toggle" class="navbar-close-menu">
+                      <svg viewBox="0 0 1024 1024" class="navbar-icon3">
                       <path
                         d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
                       ></path>
-                    </svg>
-                  </label>
+                      </svg>
+                    </label>
                 </div>
                 <nav class="navbar-links2">
                   <span class="special-link special-body-small">
