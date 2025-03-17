@@ -28,7 +28,8 @@
         }
 
         .container {
-            max-width: 900px;
+            width: calc(100% - 40px);
+            max-width: 870px;
             margin: 30px auto;
             padding: 25px;
             background-color: #ffffff;
@@ -97,7 +98,7 @@
             font-family: 'Roboto', sans-serif;
         }
         .footer-max-width {
-            width: 100%;
+          max-width: calc(100% - 40px);
             display: flex;
             align-items: flex-start;
             flex-direction: column;
@@ -177,7 +178,7 @@
           resize: none;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: calc(100% - 40px);) {
             .info-container {
                 flex-direction: column;
                 align-items: center;
@@ -263,9 +264,6 @@
             <div data="special-navbar-nav" class="navbar-desktop-menu">
               <nav class="navbar-links1">
                 <span class="special-link special-body-small">
-                  <a href="./index.html">Home</a>
-                </span>
-                <span class="special-link special-body-small">
                   <a href="./menu.html">Menu</a>
                 </span>
                 <span class="special-link special-body-small">
@@ -321,9 +319,6 @@
                 </div>
                 <nav class="navbar-links2">
                   <span class="special-link special-body-small">
-                    <a href="./index.html">Home</a>
-                  </span>
-                  <span class="special-link special-body-small">
                     <a href="./menu.html">Menu</a>
                   </span>
                   <span class="special-link special-body-small">
@@ -349,27 +344,26 @@
     </header>
 
     <div class="container">
-        
         <section>
             <h2>Reserve Your Table</h2>
             <form action="#" method="post">
                 <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" style="width: 870px" required>
+                <input type="text" id="name" name="name" placeholder="Enter your name" style="width: 100%; max-width: 870px;" required>
 
                 <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" style="width: 870px" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" style="width: 100%; max-width: 870px;" required>
 
                 <label for="phone">Your Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" style="width: 870px" required>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" style="width: 100%; max-width: 870px;" required>
 
                 <label for="date">Reservation Date</label>
-                <input type="date" id="date" name="date" style="width: 870px" required>
+                <input type="date" id="date" name="date" style="width: 100%; max-width: 870px;" required>
 
                 <label for="time">Reservation Time</label>
-                <input type="time" id="time" name="time" style="width: 870px" required>
+                <input type="time" id="time" name="time" style="width: 100%; max-width: 870px;" required>
 
                 <label for="guests">Number of Guests</label>
-                <select id="guests" name="guests" style="width: 895px" required>
+                <select id="guests" name="guests" style="width: 100%; max-width: 870px;" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -382,8 +376,8 @@
                 </select>
 
                 <label for="message">Other Important Information</label>
-                <textarea id="message" name="message" rows="4" cols="80" maxlength="500" placeholder="Enter any other important information"></textarea>
-                <button type="submit" class="special-button-animated special-button-filled steps-button" style="margin-top: 20px;">Book Now</button>
+                <textarea id="message" name="message" rows="4" maxlength="500" placeholder="Enter any other important information" style="width: 100%; max-width: 870px;; border: 1px solid black;"></textarea>
+                <button type="submit" class="special-button-animated special-button-filled steps-button" style="margin-top: 20px; max-width: 870px;">Book Now</button>
             </form>
         </section>
     </div>
