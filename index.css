@@ -379,6 +379,16 @@
     display: flex;
     position: relative;
   }
+
+  .features2-image-container {
+    height: auto;
+    width: 100%;
+    object-fit: fill;
+    max-width: 1366px;
+    display: flex;
+    position: relative;
+    overflow: visible; /* Allows the full image to be displayed */
+  }
   
   .features1-image1 {
     animation-name: fadeIn;
@@ -1877,6 +1887,15 @@
     width: 100%;
     display: flex;
     padding: var(--dl-space-space-fiveunits);
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .menu-section-padding {
+    width: 100%;
+    display: flex;
+    padding: 0px;
     position: relative;
     align-items: center;
     flex-direction: column;
