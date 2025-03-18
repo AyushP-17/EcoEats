@@ -1882,17 +1882,24 @@
     flex-direction: column;
   }
   
-  .special-section-max-width {
+  .special-section-max-width{
     width: 100%;
     max-width: var(--dl-size-size-maxwidth);
   }
   
   .special-img-ratio-1-1 {
-    width: 100%;
+    width: auto;  /* Allow width to be controlled by the flex/grid container */
+    max-width: 100%; /* Ensure images don't overflow their parent */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
     border-radius: var(--dl-radius-radius-imageradius);
-  }
+
+    /* Make images responsive */
+    flex: 1 1 auto; /* Allow images to shrink and grow within flex containers */
+    min-width: 80px; /* Prevent images from becoming too small */
+    max-width: 250px; /* Prevent them from getting too large */
+}
   
   .special-img-ratio-16-9 {
     width: 100%;
