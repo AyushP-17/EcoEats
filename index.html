@@ -140,31 +140,67 @@
                   padding-top: 60px;
                 }
                 </style>
-              <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+              <style>
+                .navbar-mobile-menu {
+                  position: fixed;
+                  top: 0;
+                  right: 0;
+                  width: 75%;
+                  height: 100%;
+                  background-color: white;
+                  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+                  transform: translateX(100%); /* Start off-screen */
+                  opacity: 0; /* Invisible initially */
+                  visibility: hidden; /* Prevent interaction when closed */
+                  transition: transform 0.5s ease-out, opacity 0.3s ease-out, visibility 0.3s linear;
+                  z-index: 1000;
+                }
+
+                /* Open state */
+                .menu-toggle:checked ~ .navbar-mobile-menu {
+                  transform: translateX(0); /* Slide into view */
+                  opacity: 1; /* Make visible */
+                  visibility: visible; /* Enable interaction */
+                }
+
+                @keyframes fadeInUp {
+                from {
+                  opacity: 0;
+                  transform: translateY(20px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+                }
+
+                .fade-in-up {
+                  animation: fadeInUp 0.6s ease-in-out;
+                }
+
+
+
+
+              </style>
+              
+              <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden />
               <label for="menu-toggle" class="navbar-burger-menu">
                 <svg viewBox="0 0 1024 1024" class="navbar-icon1">
-                  <path
-                    d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                  ></path>
+                  <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
                 </svg>
               </label>
-              <div data="special-mobile-menu" class="navbar-mobile-menu">
+              
+              <div class="navbar-mobile-menu">
                 <div class="navbar-nav">
                   <div class="navbar-top">
                     <a href="./index.html">
-                      <img
-                        alt="EcoEats Logo"
-                        src="./ecoeatslogo.jpg"
-                        class="navbar-image1"
-                      />
-                      </a>
-                      <label for="menu-toggle" class="navbar-close-menu">
-                        <svg viewBox="0 0 1024 1024" class="navbar-icon3">
-                          <path
-                            d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
-                          ></path>
-                        </svg>
-                      </label>
+                      <img alt="EcoEats Logo" src="./ecoeatslogo.jpg" class="navbar-image1" />
+                    </a>
+                    <label for="menu-toggle" class="navbar-close-menu">
+                      <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                        <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+                      </svg>
+                    </label>
                   </div>
                   <nav class="navbar-links2">
                     <span class="special-link special-body-small">
@@ -185,6 +221,7 @@
                   </nav>
                 </div>
               </div>
+              
             </header>
           </header>
         </navbar-wrapper>
