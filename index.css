@@ -1888,9 +1888,10 @@
   }
   
   .special-img-ratio-1-1 {
-    width: auto;  /* Allow width to be controlled by the flex/grid container */
+    width: 400px;  /* Allow width to be controlled by the flex/grid container */
     max-width: 100%; /* Ensure images don't overflow their parent */
-    height: auto; /* Maintain aspect ratio */
+    height: 400px; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure images don't overflow their parent */
     object-fit: cover;
     aspect-ratio: 1 / 1;
     border-radius: var(--dl-radius-radius-imageradius);
@@ -1898,7 +1899,7 @@
     /* Make images responsive */
     flex: 1 1 auto; /* Allow images to shrink and grow within flex containers */
     min-width: 80px; /* Prevent images from becoming too small */
-    max-width: 250px; /* Prevent them from getting too large */
+    max-width: 1000px; /* Prevent them from getting too large */
 }
   
   .special-img-ratio-16-9 {
