@@ -15,7 +15,7 @@
             background-color: var(--dl-color-theme-neutral-light);
             color: #333;
             margin: 15px 0px 10px;
-            padding: 60px 0px 0px;
+            padding: 80px 0px 0px;
             overflow-x: hidden;
         }
         header {
@@ -45,8 +45,14 @@
             font-family: 'STIX Two Text', serif;
             font-weight: 700;
             line-height: 1.5;
-            color: #202309;
+            color: #0a0a0a;
         }
+        h3 {
+            font-size: 24px;
+            font-family: 'STIX Two Text', serif;
+            color: #0a0a0a;
+        }
+
         h2 {
             font-family: 'Lilita One', sans-serif;
             border-bottom: 2px solid #648251
@@ -220,9 +226,128 @@
         display: flex;
       }
 
-      .navbar-close-menu {
-        cursor: pointer;
+        .navbar-close-menu {
+            cursor: pointer;
+        }
+       
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .menu-item {
+            position: relative;
+            background-color: var(--dl-color-theme-neutral-light);
+            border: 2px solid #ccc;
+            overflow: hidden;
+            width: calc(33.333%);
+            padding-bottom: 12%; /* 1.75 aspect ratio */
+            margin: 0;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visual-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hover-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            padding-bottom: 200%; /* This maintains the 1:1 aspect ratio and expands more */
+            background-color: #6d9a44;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.4s ease-out;
+            z-index: 1;
+        }
+
+        .hover-shape {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 50%;
+            background: url("white-shape.png") no-repeat center center;
+            background-size: contain;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.4s ease-out 0.1s;
+            z-index: 2;
+        }
+
+        .item-image {
+            position: relative;
+            z-index: 3;
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+                    }
+
+        .content {
+        position: relative;
+        z-index: 3;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Ensure the content div takes full height */
       }
+
+
+      .item-image {
+        position: relative;
+        z-index: 3;
+        width: 70%;
+        height: auto;
+        object-fit: contain;
+        margin: auto 0; /* Vertically center the image */
+      }
+
+        .menu-item:hover .hover-bg {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .menu-item:hover .hover-shape {
+            transform: translate(-50%, -50%) scale(1.7);
+        }
+
+        .desc-line {
+            display: block;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .menu-item:hover .desc-line {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .menu-item:hover .desc-line:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        .menu-item:hover .desc-line:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        @media (max-width: 568px) {
+         .menu-item {
+                width: 100%;
+                height: auto;
+               aspect-ratio: 3 / 4; /* Maintain a 3:1 aspect ratio */
+                           }
+        }
+
     </style>
   </head>
 <body>
@@ -319,91 +444,64 @@
         <p>Discover sustainable and delicious dishes made with love and care.</p>
     </header>
 
-    <div class="container">
-              <div class="icon-key">
-                <div>
-                    <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon">
-                    <span>Contains Gluten</span>
-                </div>
-                <div>
-                    <img src="./contains-nuts-icon.png" alt="Contains Nuts" class="contains-nuts-icon">
-                    <span>Contains Nuts</span>
-                </div>
-                <div>
-                    <img src="./organic-icon.png" alt="Organic" class="organic-icon">
-                    <span>100% Organic</span>
-                </div>
-            </div>
-        <section class="menu-section">
-            <h2>Appetizers</h2>
-            <div class="menu-item">
-                <h3>Avocado Toast Trio <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon"></h3>
-                <p>Organic sourdough topped with seasonal spreads.</p>
-                <p class="price">$8.50</p>
-            </div>
-            <div class="menu-item">
-                <h3>Farm-Fresh Veggie Platter <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon"> <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
-                <p>Local vegetables with house-made hummus.</p>
-                <p class="price">$9.00</p>
-            </div>
-        </section>
+    
+    <section class="menu-section">
+      <h2 class="section-title">SECTION TITLE</h2>
 
-        <section class="menu-section">
-            <h2>Main Courses</h2>
-            <div class="menu-item">
-                <h3>Beyond Earth Burger <img src="./contains-nuts-icon.png" alt="Contains Nuts" class="contains-nuts-icon"></h3>
-                <p>Plant-based patty with lettuce, tomato, and house-made sauce.</p>
-                <p class="price">$12.00</p>
-            </div>
-            <div class="menu-item">
-                <h3>Eco Curry Bowl <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon"></h3>
-                <p>Coconut curry with seasonal vegetables and brown rice.</p>
-                <p class="price">$11.50</p>
-            </div>
-        </section>
+  <div class="menu-items">
+    <div class="menu-item">
+      <!-- Background container for hover animations -->
+      <div class="visual-bg">
+        <!-- Green circle -->
+        <div class="hover-bg"></div>
+        <!-- White shape -->
+        <div class="hover-shape"></div>
+      </div>
 
-        <section class="menu-section">
-            <h2>Global Flavors</h2>
-            <div class="menu-item">
-                <h3>Indian Chickpea Masala <img src="./gluten-free-icon.png" alt="Contains Gluten" class="gluten-free-icon"></h3>
-                <p>Slow-cooked chickpeas in a rich spiced tomato sauce, served with naan.</p>
-                <p class="price">$10.00</p>
-            </div>
-            <div class="menu-item">
-                <h3>Japanese Miso Power Bowl <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
-                <p>Brown rice, miso-marinated tofu, and edamame.</p>
-                <p class="price">$12.50</p>
-            </div>
-        </section>
-
-        <section class="menu-section">
-            <h2>Desserts</h2>
-            <div class="menu-item">
-                <h3>Vegan Chocolate Mousse <img src="./gluten-free-icon.png" alt="Gluten Free" class="gluten-free-icon"> <img src="./contains-nuts-icon.png" alt="Contains Nuts" class="contains-nuts-icon"></h3>
-                <p>Made with organic cacao and topped with an assortment of fresh fruits.</p>
-                <p class="price">$6.50</p>
-            </div>
-            <div class="menu-item">
-                <h3>Berry Bliss Parfait <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
-                <p>Layered with coconut yogurt and granola.</p>
-                <p class="price">$7.00</p>
-            </div>
-        </section>
-
-        <section class="menu-section">
-            <h2>Drinks</h2>
-            <div class="menu-item">
-                <h3>Organic Cold Brew <img src="./gluten-free-icon.png" alt="Gluten Free" class="gluten-free-icon"> <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
-                <p>Sustainably sourced coffee served black or with oat milk.</p>
-                <p class="price">$4.50</p>
-            </div>
-            <div class="menu-item">
-                <h3>Eco Smoothie <img src="./gluten-free-icon.png" alt="Gluten Free" class="gluten-free-icon"> <img src="./organic-icon.png" alt="Organic" class="organic-icon"></h3>
-                <p>Spinach, banana, chia seeds, and almond milk.</p>
-                <p class="price">$6.00</p>
-            </div>
-        </section>
+      <!-- Content on top -->
+      <div class="content">
+        <!-- Description at the top -->
+        <div class="item-description">
+          <span class="desc-line">Line 1 of description</span>
+          <span class="desc-line">Line 2 of description</span>
+        </div>
+        <!-- Item image in the middle -->
+        <img src="gluten-free-icon.png" alt="Item 1" class="item-image" />
+      </div>
+      <div style="margin-top: 6px; z-index: 3; bottom: 0; position: absolute; width: 100%; text-align: center;">
+        <h3 class="item-name">Item #1</h3>
+      </div>
     </div>
+        <!-- Item #2 -->
+        <div class="menu-item">
+          <div class="item-visual">
+            <div class="hover-bg"></div>
+            <div class="hover-shape"></div>
+            <img src="item2.png" alt="Item 2" class="item-image">
+          </div>
+          <h3 class="item-name">Item #2</h3>
+          <div class="item-description">
+            <span class="desc-line">Line 1 of description</span>
+          </div>
+        </div>
+    
+        <!-- Item #3 -->
+        <div class="menu-item">
+          <div class="item-visual">
+            <div class="hover-bg"></div>
+            <div class="hover-shape"></div>
+            <img src="item3.png" alt="Item 3" class="item-image">
+          </div>
+          <h3 class="item-name">Item #3</h3>
+          <div class="item-description">
+            <span class="desc-line">Line 1 of description</span>
+            <span class="desc-line">Line 2 of description</span>
+            <span class="desc-line">Line 3 of description</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <footer class="footer-footer1 special-section-padding">
         <div class="footer-credits">
           <div class="special-divider-horizontal"></div>
@@ -412,5 +510,6 @@
             </span>
         </div>
       </footer>
+      
 </body>
 </html>
