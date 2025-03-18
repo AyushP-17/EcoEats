@@ -365,6 +365,14 @@
   .features1-wrapper .features1-image-container {
     order: -1;
   }
+
+  .menu-wrapper {
+    display: contents;
+  }
+
+  .menu-wrapper .menu-image-container {
+    order: -1;
+  }
   
   .features1-container2 {
     width: 100%;
