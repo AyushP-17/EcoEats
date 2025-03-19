@@ -1,193 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Eco Eats</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
-
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data="accordion"] [data="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data="accordion"] details[data="accordion-trigger"][open] + [data="accordion-content"] {  max-height: 300vh;}details[data="accordion-trigger"][open] summary [data="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
-
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-theme-neutral-dark);
-        background: var(--dl-color-theme-neutral-light);
-
-        fill: var(--dl-color-theme-neutral-dark);
-      }
-    </style>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <style>
-      @keyframes fade-in-left {
-        0% {
-          opacity: 0;
-          transform: translateX(-20px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-    </style>
-    <style>
-      .menu-toggle {
-        display: none;
-      }
-
-      .navbar-container {
-        background-color: var(--dl-color-theme-neutral-light);
-      }
-
-      .navbar-mobile-menu {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--dl-color-theme-neutral-light);
-        z-index: 1000;
-      }
-
-      .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
-        display: flex;
-      }
-
-      .navbar-close-menu {
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./index.css" rel="stylesheet" />
-
-      <div class="home-container">
-        <navbar-wrapper class="navbar-wrapper">
-          <header class="navbar-container">
-            <header class="navbar-navbar-interactive">
-                <a href="./index.html">
-                <img
-                  alt="EcoEats Logo"
-                  src="./ecoeatslogo.jpg"
-                  class="navbar-image1"
-                />
-                </a>
-                <div data="special-navbar-nav" class="navbar-desktop-menu">
-                <nav class="navbar-links1">
-                  <span class="special-link special-body-small">
-                  <a href="./menu.html">Menu</a>
-                  </span>
-                  <span class="special-link special-body-small">
-                  <a href="./sustainability.html">Sustainability</a>
-                  </span>
-                  <span class="special-link special-body-small">
-                  <a href="./visitUs.html">Visit Us</a>
-                  </span>
-                  <span class="special-link special-body-small">
-                  <a href="./reservations.html">Reservations</a>
-                  </span>
-                  <span class="special-link special-body-small">
-                  <a href="./references.html">References</a>
-                  </span>
-                </nav>
-                </div>
-                <style>
-                .navbar-container {
-                  position: fixed;
-                  top: 0;
-                  width: 100%;
-                  z-index: 1000;
-                }
-                .home-container {
-                  padding-top: 60px;
-                }
-                </style>
-              <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-              <label for="menu-toggle" class="navbar-burger-menu">
-                <svg viewBox="0 0 1024 1024" class="navbar-icon1">
-                  <path
-                    d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
-                  ></path>
-                </svg>
-              </label>
-              <div data="special-mobile-menu" class="navbar-mobile-menu">
-                <div class="navbar-nav">
-                  <div class="navbar-top">
-                    <a href="./index.html">
-                      <img
-                        alt="EcoEats Logo"
-                        src="./ecoeatslogo.jpg"
-                        class="navbar-image1"
-                      />
-                      </a>
-                      <label for="menu-toggle" class="navbar-close-menu">
-                        <svg viewBox="0 0 1024 1024" class="navbar-icon3">
-                          <path
-                            d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
-                          ></path>
-                        </svg>
-                      </label>
-                  </div>
-                  <nav class="navbar-links2">
-                    <span class="special-link special-body-small">
-                      <a href="./menu.html">Menu</a>
-                    </span>
-                    <span class="special-link special-body-small">
-                      <a href="./sustainability.html">Sustainability</a>
-                    </span>
-                    <span class="special-link special-body-small">
-                      <a href="./visitUs.html">Visit Us</a>
-                    </span>
-                    <span class="special-link special-body-small">
-                      <a href="./reservations.html">Reservations</a>
-                    </span>
-                    <span class="special-link special-body-small">
-                      <a href="./references.html">References</a>
-                    </span>
-                  </nav>
-                </div>
-              </div>
-            </header>
-          </header>
-        </navbar-wrapper>
+ <html lang="en">
+   <head>
+     <title>Eco Eats</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta charset="utf-8" />
+     <meta property="twitter:card" content="summary_large_image" />
+ 
+     <style data-tag="reset-style-sheet">
+       html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data="accordion"] [data="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data="accordion"] details[data="accordion-trigger"][open] + [data="accordion-content"] {  max-height: 300vh;}details[data="accordion-trigger"][open] summary [data="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
+     </style>
+     <style data-tag="default-style-sheet">
+       html {
+         font-family: Inter;
+         font-size: 16px;
+       }
+ 
+       body {
+         font-weight: 400;
+         font-style:normal;
+         text-decoration: none;
+         text-transform: none;
+         letter-spacing: normal;
+         line-height: 1.15;
+         color: var(--dl-color-theme-neutral-dark);
+         background: var(--dl-color-theme-neutral-light);
+ 
+         fill: var(--dl-color-theme-neutral-dark);
+       }
+     </style>
+     <link
+       rel="stylesheet"
+       href="https://unpkg.com/animate.css@4.1.1/animate.css"
+     />
+     <link
+       rel="stylesheet"
+       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+       data-tag="font"
+     />
+     <link
+       rel="stylesheet"
+       href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+       data-tag="font"
+     />
+     <link
+       rel="stylesheet"
+       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+       data-tag="font"
+     />
+     <link
+       rel="stylesheet"
+       href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+       data-tag="font"
+     />
+     <style>
+       @keyframes fade-in-left {
+         0% {
+           opacity: 0;
+           transform: translateX(-20px);
+         }
+         100% {
+           opacity: 1;
+           transform: translateX(0);
+         }
+       }
+     </style>
+     <style>
+       .menu-toggle {
+         display: none;
+       }
+ 
+       .navbar-container {
+         background-color: var(--dl-color-theme-neutral-light);
+       }
+ 
+       .navbar-mobile-menu {
+         display: none;
+         flex-direction: column;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: var(--dl-color-theme-neutral-light);
+         z-index: 1000;
+       }
+ 
+       .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
+         display: flex;
+       }
+ 
+       .navbar-close-menu {
+         cursor: pointer;
+       }
+     </style>
+   </head>
+   <body>
+     <link rel="stylesheet" href="./style.css" />
+     <div>
+       <link href="./index.css" rel="stylesheet" />
+ 
+       <div class="home-container">
+         <navbar-wrapper class="navbar-wrapper">
+           <header class="navbar-container">
+             <header class="navbar-navbar-interactive">
+                 <a href="./index.html">
+                 <img
+                   alt="EcoEats Logo"
+                   src="./ecoeatslogo.jpg"
+                   class="navbar-image1"
+                 />
+                 </a>
+                 <div data="special-navbar-nav" class="navbar-desktop-menu">
+                 <nav class="navbar-links1">
+                   <span class="special-link special-body-small">
+                   <a href="./menu.html">Menu</a>
+                   </span>
+                   <span class="special-link special-body-small">
+                   <a href="./sustainability.html">Sustainability</a>
+                   </span>
+                   <span class="special-link special-body-small">
+                   <a href="./visitUs.html">Visit Us</a>
+                   </span>
+                   <span class="special-link special-body-small">
+                   <a href="./reservations.html">Reservations</a>
+                   </span>
+                   <span class="special-link special-body-small">
+                   <a href="./references.html">References</a>
+                   </span>
+                 </nav>
+                 </div>
+                 <style>
+                 .navbar-container {
+                   position: fixed;
+                   top: 0;
+                   width: 100%;
+                   z-index: 1000;
+                 }
+                 .home-container {
+                   padding-top: 60px;
+                 }
+                 </style>
+               <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+               <label for="menu-toggle" class="navbar-burger-menu">
+                 <svg viewBox="0 0 1024 1024" class="navbar-icon1">
+                   <path
+                     d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                   ></path>
+                 </svg>
+               </label>
+               <div data="special-mobile-menu" class="navbar-mobile-menu">
+                 <div class="navbar-nav">
+                   <div class="navbar-top">
+                     <a href="./index.html">
+                       <img
+                         alt="EcoEats Logo"
+                         src="./ecoeatslogo.jpg"
+                         class="navbar-image1"
+                       />
+                       </a>
+                       <label for="menu-toggle" class="navbar-close-menu">
+                         <svg viewBox="0 0 1024 1024" class="navbar-icon3">
+                           <path
+                             d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                           ></path>
+                         </svg>
+                       </label>
+                   </div>
+                   <nav class="navbar-links2">
+                     <span class="special-link special-body-small">
+                       <a href="./menu.html">Menu</a>
+                     </span>
+                     <span class="special-link special-body-small">
+                       <a href="./sustainability.html">Sustainability</a>
+                     </span>
+                     <span class="special-link special-body-small">
+                       <a href="./visitUs.html">Visit Us</a>
+                     </span>
+                     <span class="special-link special-body-small">
+                       <a href="./reservations.html">Reservations</a>
+                     </span>
+                     <span class="special-link special-body-small">
+                       <a href="./references.html">References</a>
+                     </span>
+                   </nav>
+                 </div>
+               </div>
+             </header>
+           </header>
+         </navbar-wrapper>
         <wrapper-class class="wrapper-class">
           <div class="special-header78">
             <div class="special-column special-section-padding special-section-max-width">
@@ -569,39 +569,36 @@
             }, 0);
           }
         </script>
+        
+
+        <style>
+          .text-container-2{
+            margin-left: 128px;
+            margin-bottom: 200px;
+            text-align:center;
+          }
+        </style>
 
         <features1-wrapper class="features1-wrapper">
-          <div class="special-section-padding">
-            <div class="features1-container2 special-section-max-width">
-              <div class="features1-tabs-menu">
-          <div class="features1-tab-horizontal1" onclick="switchTab2(1)">
-            <div class="features1-divider-container1">
-              <div class="features1-container3"></div>
-            </div>
-            <div class="features1-content1">
-              <h2 class="special-heading-2">
-                <span>EcoEats</span>
-              </h2>
-            </div>
-          </div>
-          <div class="features1-tab-horizontal2" onclick="switchTab2(2)">
-            <div class="features1-divider-container2">
-              <div class="features1-container4"></div>
-            </div>
-            <div class="features1-content2">
-              <h2 class="special-heading-2">
-                <span>Water Saving Intiatives</span>
-              </h2>
-            </div>
-          </div>
-          <div class="features1-tab-horizontal3" onclick="switchTab2(3)">
-            <div class="features1-divider-container3">
-              <div class="features1-container5"></div>
-            </div>
-            <div class="features1-content3">
-              <h2 class="special-heading-2"><span>Minimal Plastic Use</span></h2>
-            </div>
-          </div>
+            <div class="special-section-padding">
+              <div class="features1-container2 special-section-max-width">
+          <div class="features1-tabs-menu">
+            <div class="features1-tab-horizontal1">
+              <div class="features1-content1" style="text-align: right;">
+                    </div>
+                  </div>
+                    <div class="features1-tab-horizontal1">
+                    <div class="features1-content1">
+                      <h2 class="special-heading-5">
+                      <div class="text-container-2">
+                          <span>Life-giving,<br> feel-good food.</span>
+                        </div>
+                      </h2>
+                    </div>
+                  </div>
+                  <button class="special-button-filled" style="margin-left: 233px; margin-top: -200px; z-index: 1000;">
+                    <a href="./menu.html">Explore Menu</a>
+                  </button>
               </div>
               <div class="features1-image-container">
                 <img
@@ -899,7 +896,7 @@
       }
 
       .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
-        display: flex;
+        display: none;
       }
     </style>
   </body>
