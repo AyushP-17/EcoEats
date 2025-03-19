@@ -343,11 +343,24 @@ header p {
     left: 50%;
     width: 50%;
     height: 50%;
-    background: url("white-shape.png") no-repeat center center;
-    background-size: contain;
     transform: translate(-50%, -50%) scale(0.3);
     transition: transform 0.4s ease-out 0.08s;
     z-index: 2;
+}
+
+.hover-shape-1 {
+    background: url("white-shape.png") no-repeat center center;
+    background-size: contain;
+}
+
+.hover-shape-2 {
+    background: url("white-shape-2.png") no-repeat center center;
+    background-size: contain;
+}
+
+.hover-shape-3 {
+    background: url("white-shape-3.png") no-repeat center center;
+    background-size: contain;
 }
 
 .content {
@@ -447,6 +460,121 @@ header p {
     }
 }
 
+.steps-actions {
+    gap: var(--dl-space-space-unit);
+    display: flex;
+    align-items: flex-start;
+  }
+
+.special-button-animated {
+    outline: none;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    border-width: 2px;
+  }
+  
+  .special-input::placeholder {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .special-animated-group-container-vertical:hover div {
+    animation-play-state: paused;
+  }
+  
+  .special-animated-group-container-horizontal:hover div {
+    animation-play-state: paused;
+  }
+  
+  .special-animated-card-bg-2:has([data-animated="true"]:hover) {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(3deg) skew(0deg, 0deg);
+  }
+  
+  .special-animated-card-bg-1:has([data-animated="true"]:hover) {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-6deg) skew(0deg, 0deg);
+  }
+  
+  .special-button-animated:before {
+    top: 0;
+    left: -20%;
+    color: var(--dl-color-theme-neutral-light);
+    width: 200%;
+    height: 101%;
+    content: "";
+    z-index: 1;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    border-radius: var(--dl-radius-radius-buttonradius);
+    background-color: var(--dl-color-theme-neutral-dark);
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  }
+  
+  .special-button-animated:hover::before {
+    color: var(--dl-color-theme-neutral-light);
+    z-index: -1;
+    transform: scaleX(1);
+  }
+
+  .special-button-filled {
+    gap: var(--dl-space-space-halfunit);
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
+    cursor: pointer;
+    display: flex;
+    transition: 0.3s;
+    align-items: center;
+    font-weight: bold;
+    padding-top: var(--dl-space-space-halfunit);
+    white-space: nowrap;
+    border-color: var(--dl-color-theme-primary1);
+    border-width: 1px;
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    border-radius: var(--dl-radius-radius-buttonradius);
+    padding-right: var(--dl-space-space-oneandhalfunits);
+    padding-bottom: var(--dl-space-space-halfunit);
+    justify-content: center;
+    background-color: var(--dl-color-theme-primary1);
+  }
+  
+  .special-button-filled:hover {
+    fill: var(--dl-color-theme-secondary2);
+    color: var(--dl-color-theme-secondary2);
+    border-color: var(--dl-color-theme-primary2);
+    background-color: var(--dl-color-theme-primary2);
+  }
+
+  @media(max-width: 479px) {
+    .steps-button {
+      width: 100%;
+    }
+  }
+
+  
+
+        .button-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+    width: 100%; /* Ensures full-width container */
+    padding: 0 20px 20px; /* Adjust padding as needed, removed top padding */
+}
+
+.button-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #658352; /* Example color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #395011; /* Slightly darker on hover */
+}
+
     </style>
   </head>
 <body>
@@ -543,6 +671,9 @@ header p {
         <p>Crafted from love, expertise, and true consciousness.</p>
     </header>
 
+   
+    
+
     
     <section class="menu-section fade-in-up">
       <h2 class="section-title" style = "margin-bottom: 0;">BOWLS</h2>
@@ -554,7 +685,7 @@ header p {
                 <!-- Green circle -->
                 <div class="hover-bg"></div>
                 <!-- White shape -->
-                <div class="hover-shape"></div>
+                <div class="hover-shape hover-shape-1"></div>
             </div>
     
             <!-- Content on top -->
@@ -582,7 +713,7 @@ header p {
               <!-- Green circle -->
               <div class="hover-bg"></div>
               <!-- White shape -->
-              <div class="hover-shape"></div>
+              <div class="hover-shape hover-shape-2"></div>
           </div>
   
           <!-- Content on top -->
@@ -610,7 +741,7 @@ header p {
               <!-- Green circle -->
               <div class="hover-bg"></div>
               <!-- White shape -->
-              <div class="hover-shape"></div>
+              <div class="hover-shape hover-shape-3"></div>
           </div>
   
           <!-- Content on top -->
@@ -618,10 +749,10 @@ header p {
               <!-- Description at the top -->
               <div class="item-description">
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">I am black</span>
+                      <span class="desc-line-child">Flavorful chickpea hummus with</span>
                   </div>
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">interesting wisdom from saif</span>
+                      <span class="desc-line-child">olive oil, served with warm pita.</span>
                   </div>
               </div>
               <!-- Item image in the middle -->
@@ -644,7 +775,7 @@ header p {
                 <!-- Green circle -->
                 <div class="hover-bg"></div>
                 <!-- White shape -->
-                <div class="hover-shape"></div>
+                <div class="hover-shape hover-shape-1"></div>
             </div>
     
             <!-- Content on top -->
@@ -652,17 +783,17 @@ header p {
                 <!-- Description at the top -->
                 <div class="item-description">
                     <div class="desc-line-parent">
-                        <span class="desc-line-child">I am black</span>
+                        <span class="desc-line-child">Fire-baked crust topped with melty</span>
                     </div>
                     <div class="desc-line-parent">
-                        <span class="desc-line-child">interesting wisdom from saif</span>
+                        <span class="desc-line-child">vegan cheese and roasted veggies. </span>
                     </div>
                 </div>
                 <!-- Item image in the middle -->
                 <img src="plate1.png" alt="Item 1" class="item-image" />
             </div>
             <div style="z-index: 3; bottom: 0; width: 100%; text-align: center;">
-                <h3 class="item-name">Item #1</h3>
+                <h3 class="item-name">Firecracker Pizza</h3>
             </div>
         </div>
         <!-- Item #2 -->
@@ -672,7 +803,7 @@ header p {
               <!-- Green circle -->
               <div class="hover-bg"></div>
               <!-- White shape -->
-              <div class="hover-shape"></div>
+              <div class="hover-shape hover-shape-3"></div>
           </div>
   
           <!-- Content on top -->
@@ -680,17 +811,17 @@ header p {
               <!-- Description at the top -->
               <div class="item-description">
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">I am black</span>
+                      <span class="desc-line-child">Crispy falafel bites in soft tortillas,</span>
                   </div>
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">interesting wisdom from saif</span>
+                      <span class="desc-line-child">loaded with fresh greens and tahini.</span>
                   </div>
               </div>
               <!-- Item image in the middle -->
               <img src="plate2.png" alt="Item 1" class="item-image" />
           </div>
           <div style="z-index: 3; bottom: 0; width: 100%; text-align: center;">
-              <h3 class="item-name">Item #1</h3>
+              <h3 class="item-name">Falafel Fiesta</h3>
           </div>
       </div>
         <!-- Item #3 -->
@@ -700,7 +831,7 @@ header p {
               <!-- Green circle -->
               <div class="hover-bg"></div>
               <!-- White shape -->
-              <div class="hover-shape"></div>
+              <div class="hover-shape hover-shape-2"></div>
           </div>
   
           <!-- Content on top -->
@@ -708,17 +839,17 @@ header p {
               <!-- Description at the top -->
               <div class="item-description">
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">I am black</span>
+                      <span class="desc-line-child">Juicy plant-based patties with fresh</span>
                   </div>
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">interesting wisdom from saif</span>
+                      <span class="desc-line-child">veggies on a toasted bun.</span>
                   </div>
               </div>
               <!-- Item image in the middle -->
               <img src="plate3.png" alt="Item 1" class="item-image" />
           </div>
           <div style="z-index: 3; bottom: 0; width: 100%; text-align: center;">
-              <h3 class="item-name">Item #1</h3>
+              <h3 class="item-name">Vegan Stacker</h3>
           </div>
       </div>
     </div>
@@ -734,7 +865,7 @@ header p {
                 <!-- Green circle -->
                 <div class="hover-bg"></div>
                 <!-- White shape -->
-                <div class="hover-shape"></div>
+                <div class="hover-shape hover-shape-2"></div>
             </div>
     
             <!-- Content on top -->
@@ -742,17 +873,17 @@ header p {
                 <!-- Description at the top -->
                 <div class="item-description">
                     <div class="desc-line-parent">
-                        <span class="desc-line-child">I am black</span>
+                        <span class="desc-line-child">A creamy, sun-kissed mango</span>
                     </div>
                     <div class="desc-line-parent">
-                        <span class="desc-line-child">interesting wisdom from saif</span>
+                        <span class="desc-line-child">smoothie with a tropical twist. </span>
                     </div>
                 </div>
                 <!-- Item image in the middle -->
                 <img src="smoothie1.png" alt="Item 1" class="item-image" />
             </div>
             <div style="z-index: 3; bottom: 0; width: 100%; text-align: center;">
-                <h3 class="item-name">Item #1</h3>
+                <h3 class="item-name">Mango Mirage</h3>
             </div>
         </div>
         <!-- Item #2 -->
@@ -762,7 +893,7 @@ header p {
               <!-- Green circle -->
               <div class="hover-bg"></div>
               <!-- White shape -->
-              <div class="hover-shape"></div>
+              <div class="hover-shape hover-shape-3"></div>
           </div>
   
           <!-- Content on top -->
@@ -770,17 +901,17 @@ header p {
               <!-- Description at the top -->
               <div class="item-description">
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">I am black</span>
+                      <span class="desc-line-child">A velvety strawberry blend, fresh</span>
                   </div>
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">interesting wisdom from saif</span>
+                      <span class="desc-line-child">and refreshing. </span>
                   </div>
               </div>
               <!-- Item image in the middle -->
               <img src="smoothie2.png" alt="Item 1" class="item-image" />
           </div>
           <div style="z-index: 3; bottom: 0; width: 100%; text-align: center;">
-              <h3 class="item-name">Item #1</h3>
+              <h3 class="item-name">Strawberry Rush</h3>
           </div>
       </div>
         <!-- Item #3 -->
@@ -790,7 +921,7 @@ header p {
               <!-- Green circle -->
               <div class="hover-bg"></div>
               <!-- White shape -->
-              <div class="hover-shape"></div>
+              <div class="hover-shape hover-shape-1"></div>
           </div>
   
           <!-- Content on top -->
@@ -798,22 +929,34 @@ header p {
               <!-- Description at the top -->
               <div class="item-description">
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">I am black</span>
+                      <span class="desc-line-child">Smooth matcha latte swirled with</span>
                   </div>
                   <div class="desc-line-parent">
-                      <span class="desc-line-child">interesting wisdom from saif</span>
+                      <span class="desc-line-child"> creamy coconut milk.</span>
                   </div>
               </div>
               <!-- Item image in the middle -->
               <img src="smoothie3.png" alt="Item 1" class="item-image" />
           </div>
           <div style="z-index: 3; bottom: 0; width: 100%; text-align: center;">
-              <h3 class="item-name">Item #1</h3>
+              <h3 class="item-name">Zen Matcha</h3>
           </div>
       </div>
     </div>
     </section>
+    <header class="fade-in-up-header">
+      <h1 style="margin-top: 80px; font-size: 36px;">Crafted by chefs, delicious by nature.</h1>
+      <p>At EcoEats, every ingredient is selected with care—so you can enjoy consciously and feel great.</p>
+      <div class="button-container">
+        <div style="text-align: center; margin-top: -20px;">
+          <button class="special-button-filled special-button-animated" onclick="window.location.href='./sustainability.html'">Learn More</button>
+        </div>
+    </div>
+    </header>
+
     
+
+
     <footer class="footer-footer1 special-section-padding">
         <div class="footer-credits">
           <div class="special-divider-horizontal"></div>
@@ -824,6 +967,7 @@ header p {
       </footer>
       
 </body>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
       const menuItems = document.querySelectorAll('.menu-item');
