@@ -66,6 +66,7 @@
 .navbar-icon1 {
   width: var(--dl-size-size-xsmall);
   height: var(--dl-size-size-xsmall);
+  cursor: pointer;
 }
 
 .navbar-mobile-menu {
@@ -426,6 +427,15 @@
   flex-shrink: 0;
 }
 
+.menu-tab-horizontal1 {
+  gap: var(--dl-space-space-twounits);
+  display: flex;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
 .features1-divider-container1 {
   display: flex;
   align-self: stretch;
@@ -439,6 +449,18 @@
 }
 
 .features1-content1 {
+  gap: 16px;
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-content1 {
   gap: 16px;
   flex: 1;
   display: flex;
