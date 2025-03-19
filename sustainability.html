@@ -664,6 +664,78 @@
       }
     }
 
+
+    .partner-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .partner-card {
+      position: relative;
+      background: #fff;
+      width: 200px;
+      border-radius: 10px;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .partner-card:hover {
+      background: #1a6f09;
+      transform: translate(0px, -10px);
+      box-shadow: 0px 15px 0 #024612;
+    }
+
+    .partner-image {
+      position: relative;
+      width: 100%;
+      height: 150px;
+      background: #eee url('landscape1.png') no-repeat center/cover;
+    }
+
+    .partner-card:hover .partner-percentage, .partner-card:hover .partner-desc, .partner-card:hover .partner-note{
+      color: #fff;
+    }
+
+    .partner-percentage {
+      font-size: 48px;
+      font-family: "Lilita One", sans-serif;
+      color: #021606;
+      margin: 10px 0 0px;
+    }
+
+    .partner-desc {
+      font-family: "Lilita One", sans-serif;
+      font-size: 16px;
+      color: #17742a;
+      margin: 0px 4px 10px;
+    }
+
+    .partner-note {
+      font-size: 11px;
+      font-family: "Noto Sans", sans-serif;
+      color: #677068;
+      margin-bottom: 20px;
+      padding: 0 10px;
+      font-style: italic;
+    }
+
+    @media (min-width: 1240px) {
+        .partner-section {
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .part-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
     @media (max-width: 600px) {
       .alt-card {
         flex-direction: column;
@@ -1109,7 +1181,7 @@
   <div class="alt-cards-container">
 
     <!-- Card 1: Left variant by default -->
-    <a href="https://moveforhunger.org/blog/beyond-menu-food-waste-americas-restaurant-industry" class="alt-card alt-left-variant">
+    <a href="https://moveforhunger.org/blog/beyond-menu-food-waste-americas-restaurant-industry" target="_blank" class="alt-card alt-left-variant">
       <div class="alt-card-text">
         <h3>FOOD WASTE</h3>
         <p>
@@ -1123,7 +1195,7 @@
     </a>
 
     <!-- Card 2: Right variant -->
-    <a href="https://orders.co/blog/restaurants-and-social-responsibility-the-future-of-sustainability-in-the-industry" class="alt-card alt-right-variant">
+    <a href="https://orders.co/blog/restaurants-and-social-responsibility-the-future-of-sustainability-in-the-industry" target="_blank" class="alt-card alt-right-variant">
       <div class="alt-card-text">
         <h3>PLASTIC PREDICAMENT</h3>
         <p>
@@ -1137,7 +1209,7 @@
     </a>
 
     <!-- Card 3: Left variant again -->
-    <a href="https://shapiroe.com/blog/junk-food-waste" class="alt-card alt-left-variant">
+    <a href="https://shapiroe.com/blog/junk-food-waste" target="_blank" class="alt-card alt-left-variant">
       <div class="alt-card-text">
         <h3>ENERGY ENGINES</h3>
         <p>
@@ -1197,17 +1269,52 @@
 
 <div class="support-cause">
     <h2>So why not support the cause?</h2>
-    <p>It would mean the world! (and taste amazing)</p>
-    <div class="btn-group">
-      <a href="visitUs.html" class="btn btn-green"> I'll Visit!</a>
-      <a href="menu.html" class="btn btn-outline">Explore Menu →</a>
+    <p>It would mean the world!</p>
 </div>
+<section>
+<div class="partner-cards" style="display: flex; flex-wrap: nowrap; overflow-x: auto;">
+  <!-- Card 1 -->
+  <div class="partner-card">
+    <a href="https://veganoutreach.org" target="_blank">
+      <div class="partner-image" style="background-image: url('./veganO.png');"></div>
+    </a>
+  </div>
 
+  <!-- Card 2 -->
+  <div class="partner-card">
+    <a href="https://sustainablefoodtrust.org" target="_blank">
+      <div class="partner-image" style="background-image: url('./SFT.png');"></div>
+    </a>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="partner-card">
+    <a href="https://www.peta.org" target="_blank">
+      <div class="partner-image" style="background-image: url('./PETA.png');"></div>
+    </a>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="partner-card">
+    <a href="https://foodtank.com" target="_blank">
+      <div class="partner-image" style="background-image: url('./foodtank.png');"></div>
+    </a>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="partner-card">
+    <a href="https://fairfoodprogram.org" target="_blank">
+      <div class="partner-image" style="background-image: url('./FairFood.png');"></div>
+    </a>
+  </div>
+</div>
+</div>
+</section>
     <footer-wrapper class="footer-wrapper">
         <!--Footer component-->
         <footer class="footer-footer1 special-section-padding">
           <div class="footer-credits">
-            <div class="special-divider-horizontal"></div>
+            <div class="special-divider-horizontal" style="width: 100%;"></div>
               <span class="special-body-small">
                 <span>© 2025 EcoEats. All rights reserved.</span>
               </span>
