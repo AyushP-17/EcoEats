@@ -15,7 +15,7 @@
             background-color: var(--dl-color-theme-neutral-light);
             color: #333;
             margin: 15px 0px 10px;
-            padding: 125px 0px 0px;
+            padding: 5px 0px 0px;
             overflow-x: hidden;
         }
         header {
@@ -573,11 +573,48 @@ header p {
 
 .button-container button:hover {
     background-color: #395011; /* Slightly darker on hover */
+    
+}/* Enable smooth scrolling on the entire page */
+html {
+  scroll-behavior: smooth;
 }
 
+/* Back-to-top button styles */
+.back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      border: 2px solid #6d9a44; /* Green circle outline */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #6d9a44;
+      background-color: transparent;
+      transition: background-color 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+      opacity: 0;          /* Hidden by default */
+      pointer-events: none;/* Prevents accidental clicks */
+      z-index: 1000;
+    }
+    
+    .back-to-top:hover {
+      background-color: #6d9a44;
+      color: #fff;
+    }
+    
+    /* When the .show class is added, make the button visible and interactive */
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
     </style>
   </head>
 <body>
+  <div id="top" style="margin-bottom: 135px;"></div>
+
     <navbar-wrapper class="navbar-wrapper">
         <header class="navbar-container">
           <header data="special-navbar" class="navbar-navbar-interactive">
@@ -666,7 +703,10 @@ header p {
           </header>
         </header>
       </navbar-wrapper>
-    <header class = "fade-in-up-header">
+
+      
+
+    <header class = "fade-in-up-header" style = "padding: 0 20px">
         <h1>Our Menu</h1>
         <p>Crafted from love, expertise, and true consciousness.</p>
     </header>
@@ -944,18 +984,33 @@ header p {
       </div>
     </div>
     </section>
-    <header class="fade-in-up-header">
+    <header class="fade-in-up-header" style = "padding: 0 20px">
       <h1 style="margin-top: 80px; font-size: 36px;">Crafted by chefs, delicious by nature.</h1>
       <p>At EcoEats, every ingredient is selected with care—so you can enjoy consciously and feel great.</p>
-      <div class="button-container">
+      <div class="button-container" style="padding: 0 20px;">
         <div style="text-align: center; margin-top: -20px;">
-          <button class="special-button-filled special-button-animated" onclick="window.location.href='./sustainability.html'">Learn More</button>
+          <button class="special-button-filled special-button-animated" onclick="window.location.href='./sustainability.html'">Learn More →</button>
         </div>
     </div>
     </header>
 
-    
+    <a href="#top" class="back-to-top">
+      <span>&uarr;</span>
+    </a>
 
+    
+  <script>
+    // Listen for scroll events and toggle the button visibility based on scroll position.
+    window.addEventListener('scroll', function() {
+      const btn = document.querySelector('.back-to-top');
+      // Adjust 200 to whatever scroll offset (in pixels) you desire.
+      if (window.pageYOffset > 1200) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    });
+  </script>
 
     <footer class="footer-footer1 special-section-padding">
         <div class="footer-credits">
