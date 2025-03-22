@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap">
     <link rel="stylesheet" href="./index.css" />
     <style>
-        body {
+  body {
             font-family: 'Roboto', sans-serif;
             background-color: var(--dl-color-theme-neutral-light);
             color: #333;
@@ -32,7 +32,7 @@
             max-width: 870px;
             margin: 30px auto;
             padding: 25px;
-            background-color: #ffffff;
+            background-color: #6e7040;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
         }
@@ -43,8 +43,11 @@
             color: #202309;
         }
         h2 {
-            border-bottom: 2px solid #648251;
-            padding-bottom: 5px;
+            font-family: 'STIX Two Text', serif;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #0a0a0a;
+            padding-top: 5px;
         }
         .title {
             font-size: 48px;
@@ -215,39 +218,496 @@
       .navbar-close-menu {
         cursor: pointer;
       }
+
+      .reservation-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #d6d6b9;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-size: 48px;
+            font-family: 'STIX Two Text', serif;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #0a0a0a;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .members {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .members label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 5px 10px;
+    }
+
+    .counter button {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .counter input {
+      width: 50px;
+      text-align: center;
+      font-size: 16px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .calendar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* Calendar Section */
+    .calendar {
+      background-color: #1b2210;
+      border-radius: 8px;
+      width: 220px;
+      padding: 10px;
+      color: #fff;
+    }
+
+    .calendar .month {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+
+    }
+
+    .calendar table {
+      width: 100%;
+      background-color: #fff;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      color: #333;
+    }
+
+    .calendar th,
+    .calendar td {
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #ddd;
+    }
+
+    /* Time Slots Section */
+    .time-slots {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 120px;
+    }
+
+    .time-slots button {
+      padding: 10px;
+      background-color: #eee;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      font-size: 14px;
+    }
+
+    .time-slots button:hover {
+      background-color: #ccc;
+    }
     </style>
-</head>
-    <style data-tag="reset-style-sheet">
-      *{  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}
-      </style>
     <style>
-      .menu-toggle {
-        display: none;
-      }
+  .calendar {
+    background-color: #d7d7b0;
+    border-radius: 8px;
+    padding: 10px;
+    color: #333;
+    width: 100%;
+  }
 
-      .navbar-container {
-        background-color: var(--dl-color-theme-neutral-light);
-      }
+  .calendar .month {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: #658352;
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-      .navbar-mobile-menu {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--dl-color-theme-neutral-light);
-        z-index: 1000;
-      }
+  .calendar .month button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+  }
 
-      .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
-        display: flex;
-      }
+  .calendar table {
+    width: 100%;
+    background-color: #fff;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    color: #333;
+  }
 
-      .navbar-close-menu {
-        cursor: pointer;
-      }
+  .calendar th,
+  .calendar td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .calendar th {
+    color: #333;
+    font-weight: bold;
+  }
+
+  .calendar td {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .calendar .selected {
+    background-color: #4b6a40;
+    color: white;
+  }
+
+  .calendar td:hover {
+    background-color: #f0f0f0;
+  }
+
+  .time-slots-container {
+    display: none; /* Hide initially */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .time-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 120px;
+  }
+
+  .time-slots button {
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #333;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .time-slots button:hover {
+    background-color: #ccc;
+  }
+
+  .selected-date {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+</style>
+<style>
+  .contact-form {
+    display: none;
+    margin-top: 20px;
+    font-family: 'Noto Sans', sans-serif;
+  }
+
+  .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #648251;
+  }
+
+  .contact-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #648251;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f6;
+  }
+
+  .contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6b8e23;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .contact-form button:hover {
+    background-color: #4b6a40;
+  }
+</style>
+<style>
+  @keyframes swipeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .swipe-up {
+    animation: swipeUp 0.5s ease-out;
+  }
+
+  .calendar-container,
+  .time-slots-container,
+  .contact-form {
+    display: none; /* Hide initially */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .time-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 120px;
+  }
+
+  .time-slots button {
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #333;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .time-slots button:hover {
+    background-color: #ccc;
+  }
+
+  .selected-date {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+
+  .special-button-animated {
+    outline: none;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    border-width: 2px;
+  }
+  
+  .special-input::placeholder {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .special-animated-group-container-vertical:hover div {
+    animation-play-state: paused;
+  }
+  
+  .special-animated-group-container-horizontal:hover div {
+    animation-play-state: paused;
+  }
+  
+  .special-animated-card-bg-2:has([data-animated="true"]:hover) {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(3deg) skew(0deg, 0deg);
+  }
+  
+  .special-animated-card-bg-1:has([data-animated="true"]:hover) {
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-6deg) skew(0deg, 0deg);
+  }
+  
+  .special-button-animated:before {
+    top: 0;
+    left: -20%;
+    color: var(--dl-color-theme-neutral-light);
+    width: 200%;
+    height: 101%;
+    content: "";
+    z-index: 1;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    border-radius: var(--dl-radius-radius-buttonradius);
+    background-color: var(--dl-color-theme-neutral-dark);
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+  }
+  
+  .special-button-animated:hover::before {
+    color: var(--dl-color-theme-neutral-light);
+    z-index: -1;
+    transform: scaleX(1);
+  }
+
+  .special-button-filled {
+    gap: var(--dl-space-space-halfunit);
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
+    cursor: pointer;
+    display: flex;
+    transition: 0.3s;
+    align-items: center;
+    font-weight: bold;
+    padding-top: var(--dl-space-space-halfunit);
+    white-space: nowrap;
+    border-color: var(--dl-color-theme-primary1);
+    border-width: 1px;
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    border-radius: var(--dl-radius-radius-buttonradius);
+    padding-right: var(--dl-space-space-oneandhalfunits);
+    padding-bottom: var(--dl-space-space-halfunit);
+    justify-content: center;
+    background-color: var(--dl-color-theme-primary1);
+    
+  }
+  
+  .special-button-filled:hover {
+    fill: var(--dl-color-theme-secondary2);
+    color: var(--dl-color-theme-secondary2);
+    border-color: var(--dl-color-theme-primary2);
+    background-color: var(--dl-color-theme-primary2);
+  }
+
+  @media(max-width: 479px) {
+    .steps-button {
+      width: 100%;
+    }
+  }
+
+  
+
+        .button-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically (if needed) */
+    width: 100%; /* Ensures full-width container */
+    padding: 0 20px 20px; /* Adjust padding as needed, removed top padding */
+}
+
+.button-container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #658352; /* Example color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #395011; /* Slightly darker on hover */
+    
+}/* Enable smooth scrolling on the entire page */
+</style>
+<style>
+        .confirmation-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #d6d6b9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            display: none; /* Hide initially */
+            animation: swipeUp 0.5s ease-out;
+        }
+        .confirmation-container h1 {
+            font-size: 48px;
+            font-family: 'STIX Two Text', serif;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #0a0a0a;
+            margin-bottom: 10px;
+        }
+        .confirmation-container p {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 18px;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .confirmation-details {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .confirmation-details h2 {
+            font-family: 'STIX Two Text', serif;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #0a0a0a;
+            margin-bottom: 10px;
+        }
+        .confirmation-details p {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+        .edit-button {
+            padding: 10px 20px;
+            border: 2px solid #658352;
+            background-color: transparent;
+            color: #658352;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .edit-button:hover {
+            background-color: #658352;
+            color: white;
+        }
     </style>
   </head>
 <body>
@@ -339,59 +799,339 @@
           </header>
         </header>
       </navbar-wrapper>
-    <header>
-        <h1 class ="title"> <span> Make a Reservation </span> </h1>
-    </header>
+      <div class="content">
+      <h1 style = "animation: swipeUp 0.5s ease-out;">Make a Reservation</h1>
+      <!-- Begin Reservation Button -->
 
-    <div class="container">
-        <section>
-            <h2>Reserve Your Table</h2>
-            <form action="#" method="post">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" style="width: 100%; max-width: 870px;" required>
+      <div class="button-container" style="padding: 0 0px; animation: swipeUp 0.5s ease-out;">
+        <div style="text-align: center;">
+          <button class="special-button-filled special-button-animated" style="font-weight: normal; font-family: 'Noto Sans', sans-serif;" onclick="this.style.display='none'; showMembers()">Begin Booking</button>
+        </div>
+      </div>
+      
+      <!-- Guest Counter -->
+      <div class="members" id="members" style="display: none;">
+        <label for="memberCount" style="font-family: 'Noto Sans', sans-serif; font-weight: 500; margin-bottom: 15px;">How many members are coming?</label>
+        <div class="counter" style="margin-top: 10px;">
+          <button onclick="decrement()">-</button>
+        <input type="text" id="memberCount" value="0" readonly style="font-family: 'Noto Sans', sans-serif; ">
+        <button onclick="increment()">+</button>
+          </div>
+          </div>
+          <div class="reservation-container">
+  <!-- Calendar and Time Slots -->
+  <div class="calendar-container" style="display: flex; justify-content: center;">
+    <h2 style="font-family: 'STIX Two Text', serif; color: black; font-style: italic; font-weight: 100px; font-size: 24px; text-align: center; width: 300px; border-bottom: 2px solid #648251; color: #333; max-width: 600px; margin: 0 auto;">Pick a Date and Time</h2>
+    <!-- Calendar -->
+    <div class="calendar">
+      <div class="month">
+        <button onclick="prevMonth()">&#10094;</button>
+        <span id="monthYear"></span>
+        <button onclick="nextMonth()">&#10095;</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+          </tr>
+        </thead>
+        <tbody id="calendarBody">
+          <!-- Calendar days will be generated here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" style="width: 100%; max-width: 870px;" required>
-
-                <label for="phone">Your Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" style="width: 100%; max-width: 870px;" required>
-
-                <label for="date">Reservation Date</label>
-                <input type="date" id="date" name="date" style="width: 100%; max-width: 870px;" required>
-
-                <label for="time">Reservation Time</label>
-                <input type="time" id="time" name="time" style="width: 100%; max-width: 870px;" required>
-
-                <label for="guests">Number of Guests</label>
-                <select id="guests" name="guests" style="width: 100%; max-width: 870px;" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9+">9+</option>
-                </select>
-
-                <label for="message">Other Important Information</label>
-                <textarea id="message" name="message" rows="4" maxlength="500" placeholder="Enter any other important information" style="width: 100%; max-width: 870px;; border: 1px solid black;"></textarea>
-                <button type="submit" class="special-button-animated special-button-filled steps-button" style="margin-top: 20px; max-width: 870px;">Book Now</button>
-            </form>
-        </section>
+  
+  <!-- Time Slots -->
+  <div class="time-slots-container" id="timeSlotsContainer">
+    <div class="selected-date" id="selectedDate"></div>
+    <div class="time-slots" id="timeSlots">
+      <button onclick="selectTimeSlot(this)">10:30 AM</button>
+      <button onclick="selectTimeSlot(this)">11:30 AM</button>
+      <button onclick="selectTimeSlot(this)">2:30 PM</button>
+      <button onclick="selectTimeSlot(this)">4:30 PM</button>
+    </div>
+  </div>
+</div>
+<div class="contact-form" id="contactForm" style="padding: 0 40px; justify-content: center; max-width: 600px; margin: 0 auto; max-width: 600px;">
+  <label for="name" style="font-family: 'STIX Two Text', sans-serif; color: black; font-style: italic; font-weight: 100px; font-size: 24px;">What's your name?</label>
+  <input type="text" style="font-family: 'STIX Two Text', serif; color: black; font-style: italic; font-weight: 100px; font-size: 18px; width: 400px; border: none; border-bottom: 1px solid #648251; border-radius: 0; padding: 5px 0 10px 10px; margin-bottom: 20px; background-color: var(--dl-color-theme-neutral-light); outline: none;" id="name" placeholder="Type your full name" required>
+  <label for="emailOrPhone" style="font-family: 'STIX Two Text', serif; color: black; font-style: italic; font-weight: 100px; font-size: 24px;">What's your phone number?</label>
+  <input type="text" id="emailOrPhone" style="font-family: 'STIX Two Text', serif; color: black; font-style: italic; font-weight: 100px; font-size: 18px; width: 400px; border: none; border-bottom: 1px solid #648251; border-radius: 0; padding: 5px 0 10px 10px; margin-bottom: 20px; background-color: var(--dl-color-theme-neutral-light); outline: none;"placeholder="+1(222) - 333 - 4444" required>
+  <button onclick="bookTable()" style="border-radius: 24px;">BOOK A TABLE</button>
+</div>
+</div>
     </div>
 
-    <footer-wrapper class="footer-wrapper">
-      <!--Footer component-->
-      <footer class="footer-footer1 special-section-padding">
-        <div class="footer-credits">
-          <div class="special-divider-horizontal" style="width: 100%;"></div>
-            <span class="special-body-small">
-              <span>© 2025 EcoEats. All rights reserved.</span>
-            </span>
+
+    
+
+          <style>
+            .calendar-wrapper {
+              background-color: #8bb940;
+              border-radius: 8px;
+              padding: 20px;
+              color: #fff;
+              width: 100%;
+            }
+            .calendar td {
+              cursor: pointer;
+              position: relative;
+            }
+            .calendar .selected {
+              background-color: #658352;
+              color: white;
+            }
+            .calendar .selected:hover {
+              background-color: #445b40;
+            }
+
+            
+          </style>
+
+<style>
+  .outline-button {
+    padding: 10px 20px;
+    border: 2px solid #658352;
+    background-color: transparent;
+    color: #658352;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Noto Sans', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .outline-button:hover {
+    background-color: #658352;
+    color: white;
+  }
+</style>
+    
+      <script>
+        function showMembers() {
+          const members = document.getElementById("members");
+          members.style.display = "block";
+          members.classList.add("swipe-up");
+        }
+
+        function scrollToElement(element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+        }
+
+        function increment() {
+          const countInput = document.getElementById("memberCount");
+          countInput.value = parseInt(countInput.value) + 1;
+          showReservationElements();
+        }
+    
+        function decrement() {
+          const countInput = document.getElementById("memberCount");
+          if (countInput.value > 1) {
+            countInput.value = parseInt(countInput.value) - 1;
+            showReservationElements();
+          }
+        }
+
+        let hasScrolledToCalendar = false;
+
+        function showReservationElements() {
+          const countInput = document.getElementById("memberCount");
+          const reservationContainer = document.querySelector(".reservation-container");
+          const timeSlotsContainer = document.getElementById("timeSlotsContainer");
+          if (parseInt(countInput.value) >= 1) {
+            reservationContainer.style.display = "block";
+            reservationContainer.classList.add("swipe-up");
+            timeSlotsContainer.style.display = "flex";
+            timeSlotsContainer.classList.add("swipe-up");
+            if (!hasScrolledToCalendar) {
+              scrollToElement(reservationContainer); // Auto-scroll to the calendar only the first time
+              hasScrolledToCalendar = true;
+            }
+          } else {
+            reservationContainer.style.display = "none";
+            timeSlotsContainer.style.display = "none";
+          }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+          renderCalendar();
+          showReservationElements();
+        });
+      </script>
+    
+    <script>
+      const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+      let currentDate = new Date();
+      let today = new Date();
+    
+      function renderCalendar() {
+        const monthYear = document.getElementById("monthYear");
+        const calendarBody = document.getElementById("calendarBody");
+        const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+        const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+    
+        monthYear.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+        calendarBody.innerHTML = "";
+    
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+          const row = document.createElement("tr");
+    
+          for (let j = 0; j < 7; j++) {
+            const cell = document.createElement("td");
+            if (i === 0 && j < firstDay) {
+              cell.textContent = "";
+            } else if (date > daysInMonth) {
+              break;
+            } else {
+              const cellDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), date);
+              cell.textContent = date;
+              if (cellDate > today) {
+                cell.onclick = () => selectDate(cell);
+              } else if (cellDate.toDateString() === today.toDateString()) {
+                cell.onclick = () => selectDate(cell);
+                cell.classList.add("selected");
+                document.getElementById("selectedDate").textContent = `Selected Date: ${monthNames[currentDate.getMonth()]} ${cell.textContent}, ${currentDate.getFullYear()}`;
+                document.getElementById("timeSlotsContainer").style.display = "flex";
+              } else {
+                cell.style.color = "#ccc"; // Disable past dates
+              }
+              if (j === 0) {
+                cell.classList.add("sunday");
+              }
+              date++;
+            }
+            row.appendChild(cell);
+          }
+          calendarBody.appendChild(row);
+        }
+        // Ensure today is selected by default
+        const todayCell = document.querySelector(".calendar .selected");
+        if (todayCell) {
+          selectDate(todayCell);
+        }
+      }
+    
+      function prevMonth() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+      }
+    
+      function nextMonth() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+      }
+    
+      function selectDate(cell) {
+  const selected = document.querySelector(".calendar .selected");
+  if (selected) {
+    selected.classList.remove("selected");
+  }
+  cell.classList.add("selected");
+
+  // Show the time slots
+  const selectedDate = `${monthNames[currentDate.getMonth()]} ${cell.textContent}, ${currentDate.getFullYear()}`;
+  document.getElementById("selectedDate").textContent = `Selected Date: ${selectedDate}`;
+  const timeSlotsContainer = document.getElementById("timeSlotsContainer");
+  timeSlotsContainer.style.display = "flex";
+  timeSlotsContainer.classList.add("swipe-up");
+  document.getElementById("contactForm").style.display = "none"; // Hide contact form initially
+  scrollToElement(timeSlotsContainer);
+}
+
+function bookTable() {
+  const name = document.getElementById("name").value;
+  const emailOrPhone = document.getElementById("emailOrPhone").value;
+  const selectedDate = document.getElementById("selectedDate").textContent.replace("Selected Date: ", "");
+  const selectedTimeSlot = document.querySelector(".time-slots button.selected").textContent;
+  document.getElementById("confirmationDate").textContent = selectedDate;
+  const tableNumber = Math.floor(Math.random() * 9) + 1;
+
+  if (name && emailOrPhone && selectedTimeSlot) {
+    document.getElementById("confirmationName").textContent = name;
+    document.getElementById("confirmationDateDetail").textContent = selectedDate;
+    document.getElementById("confirmationTime").textContent = selectedTimeSlot;
+    document.getElementById("confirmationGuests").textContent = document.getElementById("memberCount").value;
+    document.getElementById("confirmationLocation").textContent = "EcoEats, 123 Green St, EcoCity";
+
+    document.getElementById("contactForm").style.display = "none";
+    const confirmationContainer = document.getElementById("confirmationContainer");
+    confirmationContainer.style.display = "block";
+    confirmationContainer.classList.add("swipe-up");
+    scrollToElement(confirmationContainer);
+  } else {
+    alert("Please fill in all the details and select a time slot.");
+  }
+}
+    
+      function selectTimeSlot(button) {
+        const selected = document.querySelector(".time-slots button.selected");
+        if (selected) {
+          selected.classList.remove("selected");
+          selected.style.backgroundColor = "#eee"; // Reset color of previously selected button
+          selected.style.color = "black";
+        }
+        button.classList.add("selected");
+        button.style.backgroundColor = "#658352"; // Change color of selected button
+        button.style.color = "white";
+
+        // Show contact form if a date is already selected
+        const selectedDate = document.querySelector(".calendar .selected");
+        if (selectedDate) {
+          const contactForm = document.getElementById("contactForm");
+          contactForm.style.display = "block";
+          contactForm.classList.add("swipe-up");
+          scrollToElement(contactForm);
+        }
+      }
+    
+      document.addEventListener("DOMContentLoaded", renderCalendar);
+    </script>
+
+<div class="confirmation-container" id="confirmationContainer">
+        <h1>You're all set!</h1>
+        <p>We've confirmed your reservation for <span id="confirmationDate"></span>.</p>
+        <p>Thank you for booking with us. We're excited to welcome you!</p>
+        <div class="confirmation-details">
+            <h2>Details:</h2>
+            <p>Name: <span id="confirmationName"></span></p>
+            <p>Date: <span id="confirmationDateDetail"></span></p>
+            <p>Time: <span id="confirmationTime"></span></p>
+            <p>Guests: <span id="confirmationGuests"></span></p>
+            <p>Location: <span id="confirmationLocation"></span></p>
         </div>
-      </footer>
-    </footer-wrapper>
+        <p>Need to make a tweak?</p>
+        <button class="edit-button" onclick="editReservation()">Edit Reservation</button>
+    </div>
+
+<div style="text-align: center; margin-top: 40px; animation: swipeUp 0.5s ease-out;">
+  <h2 style="font-size: 38px; margin-bottom: 10px; ">Questions?</h2>
+  <p style="font-family: 'Noto Sans', sans-serif; font-size: 18px; font-style: italic; color: #333;">We'd be more than happy to answer.</p>
+  
+    
+    <button onclick="window.location.href='./visitUs.html'" class = "outline-button">Call Us</button>
+    <br><br>
+</div>
+</div>
+</div>
+<!-- End of added section -->
+<script>
+        function editReservation() {
+            document.getElementById("confirmationContainer").style.display = "none";
+            document.getElementById("contactForm").style.display = "block";
+            scrollToElement(document.getElementById("contactForm"));
+        }
+    </script>
 </body>
 </html>

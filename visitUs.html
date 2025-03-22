@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap">
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
-        body { font-family: 'Roboto', sans-serif; margin: 15px 0px 10px; padding: 60px 40px 0px; text-align: center; background-color: var(--dl-color-theme-neutral-light);overflow-x: hidden;}
+        body { font-family: 'Roboto', sans-serif; margin: 15px 0px 10px; padding: 60px 0px 0px; text-align: center; background-color: var(--dl-color-theme-neutral-light);overflow-x: hidden;}
         .container { max-width: calc(100% - 40px); margin: 0 auto; }
-        .map-container { margin: 20px 0; }
-        iframe { width: 100%; height: 300px; border: 0; }
+        .map-container { margin: 20px 0; padding-bottom: 50px; } /* Add padding to the bottom */
+        #map { width: 100%; height: 200px; background-color: rgb(221, 221, 221); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px; }
+        .leaflet-container { background-color: rgb(221, 221, 221); }
         .info-container { display: flex; justify-content: center; align-items: flex-start; width: fit-content; margin: 0 auto; }
         .info { width: 55%; margin: 0 10px; }
         .button { background-color:#648251; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; }
@@ -20,7 +22,7 @@
             display: contents;
         }
         header {
-            font-family: inherit;
+            font-family: 'inherit';
             background-color: var(--dl-color-theme-neutral-light);
             color: black;
             padding: 0px;
@@ -112,7 +114,7 @@
         }
 
         .special-button-filled {
-            gap: var(--dl-space-space-halfunit);
+            gap: var (--dl-space-space-halfunit);
             fill: var(--dl-color-theme-secondary1);
             color: var (--dl-color-theme-secondary1);
             cursor: pointer;
@@ -147,8 +149,11 @@
             color: #202309;
         }
         h2 {
-            color: #648251
-            ;
+            font-family: 'STIX Two Text', serif;
+        }
+
+        body {
+          font-family: 'Noto Sans', sans-serif;
         }
         .menu-toggle {
         display: none;
@@ -167,7 +172,7 @@
         width: 100%;
         height: 100%;
         background-color: var(--dl-color-theme-neutral-light);
-        z-index: 1000;
+        z-index: 1001; /* Ensure the mobile menu is above the zoom control */
       }
 
       .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
@@ -177,41 +182,13 @@
       .navbar-close-menu {
         cursor: pointer;
       }
+
+      .leaflet-control-container .leaflet-bottom.leaflet-right {
+        z-index: 1000; /* Ensure the zoom control is below the mobile menu */
+      }
     </style>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
-    <style data-tag="reset-style-sheet">
-      *{  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}
-      </style>
-    <style>
-      .menu-toggle {
-        display: none;
-      }
-
-      .navbar-container {
-        background-color: var(--dl-color-theme-neutral-light);
-      }
-
-      .navbar-mobile-menu {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--dl-color-theme-neutral-light);
-        z-index: 1000;
-      }
-
-      .menu-toggle:checked + .navbar-burger-menu + .navbar-mobile-menu {
-        display: flex;
-      }
-
-      .navbar-close-menu {
-        cursor: pointer;
-      }
-    </style>
-  </head>
 <body>
     <navbar-wrapper class="navbar-wrapper">
         <header class="navbar-container">
@@ -304,10 +281,8 @@
     <div class="container">
         <h1>Visit Us</h1>
         
-        <div class="map-container" style="width: 100%; max-width: 870px; border-radius: 15px; overflow: hidden; border: 5px solid #648251; margin: 40px auto 0;"></div>
-          <div style="margin: 40px auto 0;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4990.218455888012!2d2.2919063763056844!3d48.85837007133203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e1!3m2!1sen!2sus!4v1742360272008!5m2!1sen!2sus" allowfullscreen style="width: 100%; max-width: 870px; "></iframe>
-          </div>
+        <div class="map-container" style="width: 100%; max-width: 870px; /* border-radius: 15px; overflow: hidden; border: 5px solid #648251; */ margin: 40px auto 0;">
+            <div id="map"></div>
         </div>
         
         <div style="margin: 20px auto 0;" class="info-container">
@@ -315,7 +290,7 @@
                 <h2>Contact Information</h2>
                 <p class="special-body-small">Phone: +1-123-456-7890</p>
                 <p class="special-body-small">Email: info@ecoeats.com</p>
-                <p class="special-body-small">Address: Av. Gustave Eiffel, 75007 Paris, France</p>
+                <p class="special-body-small">Address: 800 Decatur St, New Orleans, LA 70116</p>
             </div>
             <div class="info">
                 <h2>Business Hours</h2>
@@ -341,5 +316,33 @@
         </div>
       </footer>
     </footer-wrapper>
+
+    <script>
+        var greenIcon = L.icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+            iconSize: [25, 41], // size of the icon
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            popupAnchor: [1, -34], // point from which the popup should open relative to the iconAnchor
+            shadowSize: [41, 41] // size of the shadow
+        });
+
+        var map = L.map('map', {
+            zoomControl: false // Disable default zoom control
+        }).setView([29.9574, -90.0620], 17); // Increased zoom level to 17
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+        }).addTo(map);
+
+        L.marker([29.9574, -90.0620], { icon: greenIcon }).addTo(map)
+            .bindPopup('EcoEats Location')
+            .openPopup();
+
+        // Add zoom control to bottom right
+        L.control.zoom({
+            position: 'bottomright'
+        }).addTo(map);
+    </script>
 </body>
 </html>
