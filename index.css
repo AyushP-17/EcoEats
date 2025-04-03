@@ -1773,6 +1773,10 @@
   outline: 1px solid var(--dl-color-theme-primary1);
 }
 
+button{
+  display:inline-block;
+}
+
 .special-button-filled {
   gap: var(--dl-space-space-halfunit);
   fill: var(--dl-color-theme-secondary1);
