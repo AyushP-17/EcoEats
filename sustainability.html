@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap">
     <title>Sustainability - EcoEats</title>
     <link rel="stylesheet" href="./index.css" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
+      
         body {
             font-family: Arial, sans-serif;
             background-color: var(--dl-color-theme-neutral-light);
@@ -665,64 +669,6 @@
     }
 
 
-    .partner-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    .partner-card {
-      position: relative;
-      background: #fff;
-      width: 200px;
-      border-radius: 10px;
-      text-align: center;
-      overflow: hidden;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .partner-card:hover {
-      background: #1a6f09;
-      transform: translate(0px, -10px);
-      box-shadow: 0px 15px 0 #024612;
-    }
-
-    .partner-image {
-      position: relative;
-      width: 100%;
-      height: 150px;
-      background: #eee url('landscape1.png') no-repeat center/cover;
-    }
-
-    .partner-card:hover .partner-percentage, .partner-card:hover .partner-desc, .partner-card:hover .partner-note{
-      color: #fff;
-    }
-
-    .partner-percentage {
-      font-size: 48px;
-      font-family: "Lilita One", sans-serif;
-      color: #021606;
-      margin: 10px 0 0px;
-    }
-
-    .partner-desc {
-      font-family: "Lilita One", sans-serif;
-      font-size: 16px;
-      color: #17742a;
-      margin: 0px 4px 10px;
-    }
-
-    .partner-note {
-      font-size: 11px;
-      font-family: "Noto Sans", sans-serif;
-      color: #677068;
-      margin-bottom: 20px;
-      padding: 0 10px;
-      font-style: italic;
-    }
-
     @media (min-width: 1240px) {
         .partner-section {
         margin: 0 auto;
@@ -813,6 +759,84 @@
       .swipe-in-right {
         animation: swipeInRight 0.8s ease-in-out;
       }
+
+      
+    .tip {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+
+    .tip-number {
+      font-size: 80px;
+      font-family: 'STIX Two Text', serif;
+      font-weight: 400;
+      color: #7a9564;
+      margin-right: 30px;
+    }
+
+    .tip-title {
+      font-size: 32px;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .tip-text {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-top: 12px;
+      max-width: 700px;
+      font-family: 'Noto Sans', serif;
+    }
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tooltip img {
+      width: 14px;
+      height: 14px;
+      vertical-align: middle;
+      margin-left: 12px;
+      cursor: pointer;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 240px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%; /* Position above the icon */
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Tooltip arrow */
+    .tooltip .tooltiptext::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 6px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
         
       .alt-card {
         position: relative; /* for the box-shadow offset effect */
@@ -1089,7 +1113,7 @@
               </div>
               <div class="card-text">
                 <h3>Giving Back</h3>
-                <p>
+                <p>`
                   Every plate you enjoy helps us give back! We partner with local shelters 
                   and food banks to donate meals to those in need. Plus, we reward eco-conscious 
                   choices—bring your own cup or container, and enjoy a discount as a thank-you 
@@ -1267,48 +1291,152 @@
   </div>
 </section>
 
+
+<section class="eco-tips-section fade-in-up" style="max-width: 800px; margin: 0 auto;">
+  <h2 style="text-align: center; font-size: 52px;">Eco Tips</h2>
+  <p style="text-align: center; font-family: 'Noto Sans', serif; font-size: 18px; margin-top: 10px; margin-bottom: 48px;">
+    Simple actions you can take to make a big difference for the planet!
+  </p>
+  
+  <div class="tip">
+    <div class="tip-number">01</div>
+    <div>
+      <h2 class="tip-title">Embrace Energy Effeciency</h2>
+      <p class="tip-text">
+        Take action in your own home! Using energy-efficient appliances
+        <span class="tooltip">
+          <i class="fa-solid fa-circle-question" style="font-size: 17px; color: rgb(146, 146, 83); transition: color 0.3s ease;" onmouseover="this.style.color='#06792e'" onmouseout="this.style.color='rgb(146, 146, 83)'"></i>
+          <span class="tooltiptext">These use less electricity while maintaining the same performance!</span>
+        </span>
+        and turning off devices when not in use helps reduce electricity consumption and lower greenhouse gas emissions.
+      </p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-number">02</div>
+    <div>
+      <h2 class="tip-title">Reduce Single Use Plastics</h2>
+      <p class="tip-text">
+        Bring your own reusable utensils or opt for our compostable packaging, 
+        and get a discount for your zero-waste ethos!
+        <span class="tooltip">
+          <i class="fa-solid fa-circle-question" style="font-size: 17px; color: rgb(146, 146, 83); transition: color 0.3s ease;" onmouseover="this.style.color='#06792e'" onmouseout="this.style.color='rgb(146, 146, 83)'"></i>
+          <span class="tooltiptext">Reusable options help cut down on landfill waste significantly.</span>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="tip">
+    <div class="tip-number">03</div>
+    <div>
+      <h2 class="tip-title">Stay Consumer Conscious</h2>
+      <p class="tip-text">
+        The fact you’re choosing EcoEats shows your dedication to making the planet a better place. 
+        Continue opting for locally sourced and organic produce, supporting regenerative agriculture and circular economy
+        <span class="tooltip">
+            <i class="fa-solid fa-circle-question" style="font-size: 17px; color: rgb(146, 146, 83); transition: color 0.3s ease;" onmouseover="this.style.color='#06792e'" onmouseout="this.style.color='rgb(146, 146, 83)'"></i>
+          <span class="tooltiptext">Circular economies reduce waste and keep resources in use longer.</span>
+        </span>
+        principles!
+      </p>
+    </div>
+  </div>
+</section>
+<style>
+  .eco-tips-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+  }
+  .eco-tips-section h2 {
+    font-size: 32px;
+    margin-bottom: 1px;
+    font-family: 'STIX Two Text', serif;
+  }
+  .eco-tips-list {
+    list-style: none;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+  }
+  .eco-tips-list li {
+    margin-bottom: 15px;
+  }
+  .eco-tips-list strong {
+    color: #06792e;
+  }
+</style>
 <div class="support-cause">
     <h2>So why not support the cause?</h2>
     <p>It would mean the world!</p>
 </div>
 <section>
-<div class="partner-cards" style="display: flex; flex-wrap: nowrap; overflow-x: auto;">
-  <!-- Card 1 -->
-  <div class="partner-card">
-    <a href="https://veganoutreach.org" target="_blank">
-      <div class="partner-image" style="background-image: url('./veganO.png');"></div>
-    </a>
+  <div class="partner-carousel" style="overflow: hidden; position: relative; width: 100%;">
+    <div class="partner-cards" style="display: flex; animation: scroll 20s linear infinite; white-space: nowrap;">
+      <!-- Images for the carousel -->
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./veganO.png" alt="Vegan Outreach" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./SFT.png" alt="Sustainable Food Trust" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./PETA.png" alt="PETA" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./foodtank.png" alt="Food Tank" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./FairFood.png" alt="Fair Food Program" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <!-- Duplicate images for endless scrolling -->
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./veganO.png" alt="Vegan Outreach" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./SFT.png" alt="Sustainable Food Trust" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./PETA.png" alt="PETA" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./foodtank.png" alt="Food Tank" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+      <div class="partner-card" style="flex: 0 0 auto; width: 200px; margin: 0 10px;">
+        <img src="./FairFood.png" alt="Fair Food Program" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;" />
+      </div>
+    </div>
   </div>
 
-  <!-- Card 2 -->
-  <div class="partner-card">
-    <a href="https://sustainablefoodtrust.org" target="_blank">
-      <div class="partner-image" style="background-image: url('./SFT.png');"></div>
-    </a>
-  </div>
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-200px * 5 - 140px)); /* Adjusted for card width and spacing */
+      }
+    }
 
-  <!-- Card 3 -->
-  <div class="partner-card">
-    <a href="https://www.peta.org" target="_blank">
-      <div class="partner-image" style="background-image: url('./PETA.png');"></div>
-    </a>
-  </div>
+    .partner-carousel:hover .partner-cards {
+      animation-play-state: paused;
+    }
 
-  <!-- Card 4 -->
-  <div class="partner-card">
-    <a href="https://foodtank.com" target="_blank">
-      <div class="partner-image" style="background-image: url('./foodtank.png');"></div>
-    </a>
-  </div>
+    .partner-card img {
+      transition: transform 0.3s ease;
+    }
 
-  <!-- Card 5 -->
-  <div class="partner-card">
-    <a href="https://fairfoodprogram.org" target="_blank">
-      <div class="partner-image" style="background-image: url('./FairFood.png');"></div>
-    </a>
-  </div>
-</div>
-</div>
+    .partner-card:hover img {
+      transform: scale(1.1);
+    }
+  </style>
+  </style>
 </section>
     <footer-wrapper class="footer-wrapper">
         <!--Footer component-->
