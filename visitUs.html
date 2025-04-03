@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
-        body { font-family: 'Roboto', sans-serif; margin: 15px 0px 10px; padding: 60px 0px 0px; text-align: center; background-color: var(--dl-color-theme-neutral-light);overflow-x: hidden;}
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0px 0px 0px; text-align: center; background-color: var(--dl-color-theme-neutral-light);overflow-x: hidden;}
         .container { max-width: calc(100% - 40px); margin: 0 auto; }
         .map-container { margin: 20px 0; padding-bottom: 50px; } /* Add padding to the bottom */
         #map { width: 100%; height: 200px; background-color: rgb(221, 221, 221); box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px; }
@@ -88,6 +88,7 @@
             font-size: 16px;
             font-family: 'Noto Sans', sans-serif;
             line-height: 1.5;
+            text-decoration: none;
         }
 
         .special-button-filled.button1 {
@@ -294,15 +295,15 @@
             </div>
             <div class="info">
                 <h2>Business Hours</h2>
-                <p class="special-body-small">Monday - Friday: 10:00 AM - 9:00 PM</p>
-                <p class="special-body-small">Saturday: 11:00 AM - 10:00 PM</p>
-                <p class="special-body-small">Sunday: 11:00 AM - 6:00 PM</p>
+                <p class="special-body-small">Monday - Friday: 10:15 AM - 6:30 PM</p>
+                <p class="special-body-small">Saturday: 10:15 AM - 10:00 PM</p>
+                <p class="special-body-small">Sunday: 10:15 AM - 8:00 PM</p>
             </div>
         </div>
         
-        <button class="special-button-filled button1">
-            <span class="special-body-small"><a href="./reservations.html">Make a Reservation</a></span>
-        </button>
+        <a class="special-button-filled button1" href="./reservations.html">
+            <span class="special-body-small">Make a Reservation</span>
+        </a>
     </div>
 
     <footer-wrapper class="footer-wrapper">
