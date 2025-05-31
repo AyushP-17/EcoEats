@@ -1,0 +1,364 @@
+/* ==========================================================================
+   polish.css - home page only
+
+   Linked from index.html after index.css, so plain class selectors here win
+   ties. index.css is shared with every other page and is left untouched.
+   ========================================================================== */
+
+:root {
+  --eco-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --eco-wipe: #3e5232;
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero - headline pins while the strips travel up past it
+   -------------------------------------------------------------------------- */
+
+/* `clip` crops exactly like `hidden` but does NOT create a scroll container,
+   which `hidden` does - and a scroll container breaks sticky children. */
+.special-header78 {
+  overflow: clip;
+  /* The space below the headline is carried as margin on .special-column
+     instead of as gap here - see the note on that rule. */
+  gap: 0;
+}
+
+/* A sticky element stops against its own MARGIN edge, not its border edge, so
+   holding that space as margin-bottom releases the headline ~110px of scroll
+   earlier: it lets go as the second strip's bottom edge comes up rather than
+   riding past it. On-screen spacing is identical either way, because pinning
+   paints the column ~30px lower than it sits in layout, leaving ~50px of clear
+   air above the strips. Raise the margin to drop it off sooner still. */
+.special-column {
+  position: sticky;
+  top: 90px;
+  z-index: 4;
+  padding-bottom: var(--dl-space-space-unit);
+  margin-bottom: var(--dl-space-space-fourunits);
+}
+
+.content2 {
+  position: relative;
+  z-index: 1;
+  gap: var(--dl-space-space-unit);
+}
+
+/* The type is painted with a two-stop gradient clipped to the glyphs, so the
+   colour change follows the edge of the photographs as they climb: dark above
+   the line, light below it. --eco-split is the crossing point in px, set from
+   polish.js on scroll. Default 100% = entirely dark. */
+.special-text1,
+.special-text2 {
+  --eco-split: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--dl-color-theme-neutral-dark) 0 var(--eco-split),
+    var(--dl-color-theme-neutral-light) var(--eco-split) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* The outlined button gets the same treatment, label and ring both. The ring
+   is drawn as a masked pseudo-element rather than a border, because
+   border-image ignores border-radius and this button is a pill. */
+.special-actions .special-button-outline {
+  --eco-split: 100%;
+  position: relative;
+  border-color: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    var(--dl-color-theme-primary1) 0 var(--eco-split),
+    var(--dl-color-theme-neutral-light) var(--eco-split) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.special-actions .special-button-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    var(--dl-color-theme-primary1) 0 var(--eco-split),
+    var(--dl-color-theme-neutral-light) var(--eco-split) 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Hovering fills it, so drop back to flat colours for that state. */
+.special-actions .special-button-outline:hover {
+  background-image: none;
+  -webkit-text-fill-color: var(--dl-color-theme-secondary2);
+  color: var(--dl-color-theme-secondary2);
+  background-color: var(--dl-color-theme-primary2);
+}
+
+.special-actions .special-button-outline:hover::before {
+  background: var(--dl-color-theme-primary2);
+}
+
+/* While the headline is sitting on the photographs, take the strips down a
+   stop so the type reads. Pointing at a tile still brings it fully back. */
+.special-column.is-over-strips ~ .content2 .strip-frame img.special-img-scale {
+  filter: grayscale(0.55) saturate(0.9) brightness(0.68);
+}
+
+.special-column.is-over-strips ~ .content2 .strip-frame:hover img.special-img-scale {
+  filter: grayscale(0) saturate(1.05) brightness(1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Arrival - one quiet rise as the page opens
+   -------------------------------------------------------------------------- */
+
+@keyframes eco-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes eco-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.special-text1 {
+  animation: eco-rise 0.75s var(--eco-ease) 0.05s both;
+}
+
+.special-text2 {
+  animation: eco-rise 0.75s var(--eco-ease) 0.16s both;
+}
+
+.special-actions {
+  animation: eco-rise 0.75s var(--eco-ease) 0.26s both;
+}
+
+.row-container1 {
+  animation: eco-appear 1s ease 0.34s both;
+}
+
+.row-container2 {
+  animation: eco-appear 1s ease 0.44s both;
+}
+
+/* --------------------------------------------------------------------------
+   3. The scrolling strips
+   -------------------------------------------------------------------------- */
+
+/* Each row holds its set plus an exact duplicate, so the track is twice as
+   long; the duration is set to suit, not inherited from the original 20s. */
+.row-container1 .special-animated-group-horizontal,
+.row-container2 .special-animated-group-horizontal-reverse {
+  animation-duration: 28s;
+  will-change: transform;
+}
+
+/* Widen the existing edge fade so tiles ease off the sides. */
+.row-container1,
+.row-container2 {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+/* The frame is the crop window; the image inside it is oversized, so the
+   photo is already zoomed in and nothing lands half in frame. */
+.strip-frame {
+  flex: 0 0 auto;
+  position: relative;
+  width: clamp(168px, 16vw, 236px);
+  height: clamp(168px, 16vw, 236px);
+  overflow: hidden;
+  border-radius: var(--dl-radius-radius-imageradius);
+}
+
+.strip-frame img.special-img-scale {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transform: scale(1.14);
+  /* Muted rather than fully desaturated - the colour still reads, it just
+     steps back until you point at a tile. */
+  filter: grayscale(0.55) saturate(0.9);
+  transition: transform 0.55s var(--eco-ease), filter 0.4s ease;
+}
+
+/* index.css scales .special-img-scale on hover via the `scale` property,
+   which would stack on top of the transform below. Neutralise it. */
+.strip-frame img.special-img-scale:hover {
+  scale: 1;
+}
+
+.strip-frame:hover img.special-img-scale {
+  transform: scale(1.22);
+  filter: grayscale(0) saturate(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   4. Feature tabs - show they are clickable, tighten the copy
+   -------------------------------------------------------------------------- */
+
+/* Less air between each heading and its description. */
+.eco-tabs .features1-content1,
+.eco-tabs .features1-content2,
+.eco-tabs .features1-content3 {
+  gap: var(--dl-space-space-halfunit);
+}
+
+.eco-tabs .features1-tab-horizontal1,
+.eco-tabs .features1-tab-horizontal2,
+.eco-tabs .features1-tab-horizontal3 {
+  cursor: pointer;
+  overflow: visible;
+}
+
+.eco-tabs .features1-content1 .special-heading-2,
+.eco-tabs .features1-content2 .special-heading-2,
+.eco-tabs .features1-content3 .special-heading-2 {
+  display: inline-block;
+  transform-origin: left center;
+  transition: transform 0.32s var(--eco-ease), color 0.32s ease;
+}
+
+.eco-tabs .features1-tab-horizontal1:hover .special-heading-2,
+.eco-tabs .features1-tab-horizontal2:hover .special-heading-2,
+.eco-tabs .features1-tab-horizontal3:hover .special-heading-2 {
+  transform: scale(1.035);
+  color: var(--dl-color-theme-primary1);
+}
+
+/* The rule beside each tab thickens and takes the brand green. */
+.eco-tabs .features1-container3,
+.eco-tabs .features1-container4,
+.eco-tabs .features1-container5 {
+  width: 2px;
+  border-radius: 2px;
+  transition: width 0.3s var(--eco-ease), background-color 0.3s ease;
+}
+
+.eco-tabs .features1-tab-horizontal1:hover .features1-container3,
+.eco-tabs .features1-tab-horizontal2:hover .features1-container4,
+.eco-tabs .features1-tab-horizontal3:hover .features1-container5 {
+  width: 5px;
+  background-color: var(--dl-color-theme-primary1);
+}
+
+/* Whichever tab is showing keeps the thicker rule. */
+.eco-tab-active .features1-container3,
+.eco-tab-active .features1-container4,
+.eco-tab-active .features1-container5 {
+  width: 5px;
+  background-color: var(--dl-color-theme-primary1);
+}
+
+.eco-tabs .features1-tab-horizontal1:focus-visible,
+.eco-tabs .features1-tab-horizontal2:focus-visible,
+.eco-tabs .features1-tab-horizontal3:focus-visible {
+  outline: 2px solid var(--dl-color-theme-primary1);
+  outline-offset: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Image swap - a dark green panel sweeps across instead of a cross-fade
+   -------------------------------------------------------------------------- */
+
+.eco-tabs .features1-image-container {
+  overflow: hidden;
+  border-radius: var(--dl-radius-radius-imageradius);
+}
+
+.feature-wipe {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background-color: var(--eco-wipe);
+  transform: translateX(-101%);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
+   6. Leaves thrown from the cursor on a tab click
+   -------------------------------------------------------------------------- */
+
+.leaf-particle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 11px;
+  height: 11px;
+  border-radius: 0 100% 0 100%;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* --------------------------------------------------------------------------
+   7. Buttons
+   -------------------------------------------------------------------------- */
+
+.special-button-filled:hover,
+.special-button-outline:hover {
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   8. Reduced motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .row-container1 .special-animated-group-horizontal,
+  .row-container2 .special-animated-group-horizontal-reverse {
+    animation: none;
+  }
+
+  .special-text1,
+  .special-text2,
+  .special-actions,
+  .row-container1,
+  .row-container2 {
+    animation: none;
+  }
+
+  .strip-frame img.special-img-scale,
+  .features1-content1 .special-heading-2,
+  .features1-content2 .special-heading-2,
+  .features1-content3 .special-heading-2 {
+    transition: none;
+  }
+}
