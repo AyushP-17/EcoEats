@@ -18,67 +18,6 @@
     }
   }
 
-  function onScroll(fn) {
-    var ticking = false;
-    function handler() {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(function () {
-        fn();
-        ticking = false;
-      });
-    }
-    window.addEventListener("scroll", handler, { passive: true });
-    window.addEventListener("resize", handler);
-    handler();
-  }
-
-  /* ------------------------------------------------------------------
-     Headline sits still while the strips ride up behind it. Once they
-     overlap it, the type goes light so it reads against the photographs.
-     ------------------------------------------------------------------ */
-
-  function initHeroContrast() {
-    var column = document.querySelector(".special-column");
-    // Measure against the text block, not the whole column: the column's box
-    // runs past the buttons and already grazes the first strip at rest, which
-    // would flip the type light before you have scrolled at all.
-    var text = document.querySelector(".special-content1");
-    var rows = [
-      document.querySelector(".row-container1"),
-      document.querySelector(".row-container2")
-    ].filter(Boolean);
-
-    // The outlined button splits too - its label and its ring both read from
-    // the same --eco-split custom property.
-    var lines = [
-      document.querySelector(".special-text1"),
-      document.querySelector(".special-text2"),
-      document.querySelector(".special-actions .special-button-outline")
-    ].filter(Boolean);
-
-    if (!column || !text || !rows.length) return;
-
-    onScroll(function () {
-      var stripTop = rows[0].getBoundingClientRect().top;
-
-      // Colour each block only as far as the photographs have reached it, so a
-      // half-covered headline is half light rather than flipping all at once.
-      lines.forEach(function (el) {
-        var r = el.getBoundingClientRect();
-        var split = Math.min(Math.max(stripTop - r.top, 0), r.height);
-        el.style.setProperty("--eco-split", split.toFixed(1) + "px");
-      });
-
-      var t = text.getBoundingClientRect();
-      var over = rows.some(function (row) {
-        var r = row.getBoundingClientRect();
-        return r.top < t.bottom - 12 && r.bottom > t.top + 12;
-      });
-      column.classList.toggle("is-over-strips", over);
-    });
-  }
-
   /* ------------------------------------------------------------------
      Leaves flicked from the cursor, one colour per tab.
      ------------------------------------------------------------------ */
@@ -237,7 +176,6 @@
   }
 
   ready(function () {
-    initHeroContrast();
     initFeatureTabs();
   });
 })();

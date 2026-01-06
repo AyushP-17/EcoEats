@@ -11,112 +11,14 @@
 }
 
 /* --------------------------------------------------------------------------
-   1. Hero - headline pins while the strips travel up past it
+   1. Hero
    -------------------------------------------------------------------------- */
 
-/* `clip` crops exactly like `hidden` but does NOT create a scroll container,
-   which `hidden` does - and a scroll container breaks sticky children. */
-.special-header78 {
-  overflow: clip;
-  /* The space below the headline is carried as margin on .special-column
-     instead of as gap here - see the note on that rule. */
-  gap: 0;
-}
-
-/* A sticky element stops against its own MARGIN edge, not its border edge, so
-   holding that space as margin-bottom releases the headline ~110px of scroll
-   earlier: it lets go as the second strip's bottom edge comes up rather than
-   riding past it. On-screen spacing is identical either way, because pinning
-   paints the column ~30px lower than it sits in layout, leaving ~50px of clear
-   air above the strips. Raise the margin to drop it off sooner still. */
-.special-column {
-  position: sticky;
-  top: 90px;
-  z-index: 4;
-  padding-bottom: var(--dl-space-space-unit);
-  margin-bottom: var(--dl-space-space-fourunits);
-}
-
+/* The headline scrolls away with the rest of the page - it used to pin while
+   the strips travelled up past it, which is why the type carried a two-stop
+   gradient. Both are gone; the type takes its flat colour from index.css. */
 .content2 {
-  position: relative;
-  z-index: 1;
   gap: var(--dl-space-space-unit);
-}
-
-/* The type is painted with a two-stop gradient clipped to the glyphs, so the
-   colour change follows the edge of the photographs as they climb: dark above
-   the line, light below it. --eco-split is the crossing point in px, set from
-   polish.js on scroll. Default 100% = entirely dark. */
-.special-text1,
-.special-text2 {
-  --eco-split: 100%;
-  background-image: linear-gradient(
-    to bottom,
-    var(--dl-color-theme-neutral-dark) 0 var(--eco-split),
-    var(--dl-color-theme-neutral-light) var(--eco-split) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* The outlined button gets the same treatment, label and ring both. The ring
-   is drawn as a masked pseudo-element rather than a border, because
-   border-image ignores border-radius and this button is a pill. */
-.special-actions .special-button-outline {
-  --eco-split: 100%;
-  position: relative;
-  border-color: transparent;
-  background-image: linear-gradient(
-    to bottom,
-    var(--dl-color-theme-primary1) 0 var(--eco-split),
-    var(--dl-color-theme-neutral-light) var(--eco-split) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-.special-actions .special-button-outline::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: inherit;
-  background: linear-gradient(
-    to bottom,
-    var(--dl-color-theme-primary1) 0 var(--eco-split),
-    var(--dl-color-theme-neutral-light) var(--eco-split) 100%
-  );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Hovering fills it, so drop back to flat colours for that state. */
-.special-actions .special-button-outline:hover {
-  background-image: none;
-  -webkit-text-fill-color: var(--dl-color-theme-secondary2);
-  color: var(--dl-color-theme-secondary2);
-  background-color: var(--dl-color-theme-primary2);
-}
-
-.special-actions .special-button-outline:hover::before {
-  background: var(--dl-color-theme-primary2);
-}
-
-/* While the headline is sitting on the photographs, take the strips down a
-   stop so the type reads. Pointing at a tile still brings it fully back. */
-.special-column.is-over-strips ~ .content2 .strip-frame img.special-img-scale {
-  filter: grayscale(0.55) saturate(0.9) brightness(0.68);
-}
-
-.special-column.is-over-strips ~ .content2 .strip-frame:hover img.special-img-scale {
-  filter: grayscale(0) saturate(1.05) brightness(1);
 }
 
 /* --------------------------------------------------------------------------
