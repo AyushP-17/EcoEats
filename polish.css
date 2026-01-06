@@ -17,6 +17,14 @@
 /* The headline scrolls away with the rest of the page - it used to pin while
    the strips travelled up past it, which is why the type carried a two-stop
    gradient. Both are gone; the type takes its flat colour from index.css. */
+
+/* Air between the copy block and the first strip row. index.css sets 48px
+   here, which on top of the column's own 16px of padding left the strips
+   sitting low; 32px brings them up without crowding the buttons. */
+.special-header78 {
+  gap: var(--dl-space-space-twounits);
+}
+
 .content2 {
   gap: var(--dl-space-space-unit);
 }
